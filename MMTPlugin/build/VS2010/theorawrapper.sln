@@ -1,0 +1,66 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libogg_static", "..\..\ogg\win32\VS2010\libogg_static.vcxproj", "{15CBFEFF-7965-41F5-B4E2-21E8795C9159}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtheora_static", "..\..\theora\win32\VS2010\libtheora\libtheora_static.vcxproj", "{653F3841-3F26-49B9-AFCF-091DB4B67031}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "theorawrapper", "..\..\theorawrapper\win32\VS2010\theorawrapper.vcxproj", "{7B83DA29-21A1-4409-8B20-0C221DF0589A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{92EE813D-F197-4119-A573-9FB9466E4C1B} = {92EE813D-F197-4119-A573-9FB9466E4C1B}
+		{653F3841-3F26-49B9-AFCF-091DB4B67031} = {653F3841-3F26-49B9-AFCF-091DB4B67031}
+		{15CBFEFF-7965-41F5-B4E2-21E8795C9159} = {15CBFEFF-7965-41F5-B4E2-21E8795C9159}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liboggz", "..\..\oggz\win32\VS2010\liboggz\liboggz_static.vcxproj", "{92EE813D-F197-4119-A573-9FB9466E4C1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15CBFEFF-7965-41F5-B4E2-21E8795C9159}.Debug|Win32.ActiveCfg = Debug|Win32
+		{15CBFEFF-7965-41F5-B4E2-21E8795C9159}.Debug|Win32.Build.0 = Debug|Win32
+		{15CBFEFF-7965-41F5-B4E2-21E8795C9159}.Debug|x64.ActiveCfg = Debug|x64
+		{15CBFEFF-7965-41F5-B4E2-21E8795C9159}.Debug|x64.Build.0 = Debug|x64
+		{15CBFEFF-7965-41F5-B4E2-21E8795C9159}.Release|Win32.ActiveCfg = Release|Win32
+		{15CBFEFF-7965-41F5-B4E2-21E8795C9159}.Release|Win32.Build.0 = Release|Win32
+		{15CBFEFF-7965-41F5-B4E2-21E8795C9159}.Release|x64.ActiveCfg = Release|x64
+		{15CBFEFF-7965-41F5-B4E2-21E8795C9159}.Release|x64.Build.0 = Release|x64
+		{653F3841-3F26-49B9-AFCF-091DB4B67031}.Debug|Win32.ActiveCfg = Debug|Win32
+		{653F3841-3F26-49B9-AFCF-091DB4B67031}.Debug|Win32.Build.0 = Debug|Win32
+		{653F3841-3F26-49B9-AFCF-091DB4B67031}.Debug|x64.ActiveCfg = Debug|x64
+		{653F3841-3F26-49B9-AFCF-091DB4B67031}.Debug|x64.Build.0 = Debug|x64
+		{653F3841-3F26-49B9-AFCF-091DB4B67031}.Release|Win32.ActiveCfg = Release|Win32
+		{653F3841-3F26-49B9-AFCF-091DB4B67031}.Release|Win32.Build.0 = Release|Win32
+		{653F3841-3F26-49B9-AFCF-091DB4B67031}.Release|x64.ActiveCfg = Release|x64
+		{653F3841-3F26-49B9-AFCF-091DB4B67031}.Release|x64.Build.0 = Release|x64
+		{7B83DA29-21A1-4409-8B20-0C221DF0589A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7B83DA29-21A1-4409-8B20-0C221DF0589A}.Debug|Win32.Build.0 = Debug|Win32
+		{7B83DA29-21A1-4409-8B20-0C221DF0589A}.Debug|x64.ActiveCfg = Debug|x64
+		{7B83DA29-21A1-4409-8B20-0C221DF0589A}.Debug|x64.Build.0 = Debug|x64
+		{7B83DA29-21A1-4409-8B20-0C221DF0589A}.Release|Win32.ActiveCfg = Release|Win32
+		{7B83DA29-21A1-4409-8B20-0C221DF0589A}.Release|Win32.Build.0 = Release|Win32
+		{7B83DA29-21A1-4409-8B20-0C221DF0589A}.Release|x64.ActiveCfg = Release|x64
+		{7B83DA29-21A1-4409-8B20-0C221DF0589A}.Release|x64.Build.0 = Release|x64
+		{92EE813D-F197-4119-A573-9FB9466E4C1B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{92EE813D-F197-4119-A573-9FB9466E4C1B}.Debug|Win32.Build.0 = Debug|Win32
+		{92EE813D-F197-4119-A573-9FB9466E4C1B}.Debug|x64.ActiveCfg = Debug|x64
+		{92EE813D-F197-4119-A573-9FB9466E4C1B}.Debug|x64.Build.0 = Debug|x64
+		{92EE813D-F197-4119-A573-9FB9466E4C1B}.Release|Win32.ActiveCfg = Release|Win32
+		{92EE813D-F197-4119-A573-9FB9466E4C1B}.Release|Win32.Build.0 = Release|Win32
+		{92EE813D-F197-4119-A573-9FB9466E4C1B}.Release|x64.ActiveCfg = Release|x64
+		{92EE813D-F197-4119-A573-9FB9466E4C1B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

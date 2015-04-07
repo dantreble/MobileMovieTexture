@@ -1,0 +1,930 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		371E20A31A6BCFB7000B2A85 /* mmxencfrag.c in Sources */ = {isa = PBXBuildFile; fileRef = 371E209B1A6BCFB7000B2A85 /* mmxencfrag.c */; };
+		371E20A41A6BCFB7000B2A85 /* mmxfrag.c in Sources */ = {isa = PBXBuildFile; fileRef = 371E209C1A6BCFB7000B2A85 /* mmxfrag.c */; };
+		371E20A51A6BCFB7000B2A85 /* mmxidct.c in Sources */ = {isa = PBXBuildFile; fileRef = 371E209D1A6BCFB7000B2A85 /* mmxidct.c */; };
+		371E20A61A6BCFB7000B2A85 /* mmxstate.c in Sources */ = {isa = PBXBuildFile; fileRef = 371E209E1A6BCFB7000B2A85 /* mmxstate.c */; };
+		371E20A81A6BCFB7000B2A85 /* sse2idct.c in Sources */ = {isa = PBXBuildFile; fileRef = 371E20A01A6BCFB7000B2A85 /* sse2idct.c */; };
+		371E20A91A6BCFB7000B2A85 /* x86cpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 371E20A11A6BCFB7000B2A85 /* x86cpu.c */; };
+		371E20AA1A6BCFB7000B2A85 /* x86state.c in Sources */ = {isa = PBXBuildFile; fileRef = 371E20A21A6BCFB7000B2A85 /* x86state.c */; };
+		372D619F1A50410000BA690E /* theorawrapper.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 378C8B30149006A800927CFE /* theorawrapper.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		373DAF0F1A5034E1003723D9 /* GfxDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 373DAF041A5034E1003723D9 /* GfxDevice.cpp */; };
+		373DAF101A5034E1003723D9 /* GfxDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 373DAF041A5034E1003723D9 /* GfxDevice.cpp */; };
+		373DAF111A5034E1003723D9 /* GfxDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 373DAF051A5034E1003723D9 /* GfxDevice.h */; };
+		373DAF121A5034E1003723D9 /* MathHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 373DAF061A5034E1003723D9 /* MathHelpers.h */; };
+		373DAF131A5034E1003723D9 /* TextureContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 373DAF071A5034E1003723D9 /* TextureContext.cpp */; };
+		373DAF141A5034E1003723D9 /* TextureContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 373DAF071A5034E1003723D9 /* TextureContext.cpp */; };
+		373DAF151A5034E1003723D9 /* TextureContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 373DAF081A5034E1003723D9 /* TextureContext.h */; };
+		373DAF161A5034E1003723D9 /* TextureD3D9.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 373DAF091A5034E1003723D9 /* TextureD3D9.cpp */; };
+		373DAF171A5034E1003723D9 /* TextureD3D9.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 373DAF091A5034E1003723D9 /* TextureD3D9.cpp */; };
+		373DAF181A5034E1003723D9 /* TextureD3D9.h in Headers */ = {isa = PBXBuildFile; fileRef = 373DAF0A1A5034E1003723D9 /* TextureD3D9.h */; };
+		373DAF191A5034E1003723D9 /* TextureHandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 373DAF0B1A5034E1003723D9 /* TextureHandle.cpp */; };
+		373DAF1A1A5034E1003723D9 /* TextureHandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 373DAF0B1A5034E1003723D9 /* TextureHandle.cpp */; };
+		373DAF1B1A5034E1003723D9 /* TextureHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 373DAF0C1A5034E1003723D9 /* TextureHandle.h */; };
+		373DAF1C1A5034E1003723D9 /* TextureOpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 373DAF0D1A5034E1003723D9 /* TextureOpenGL.cpp */; };
+		373DAF1D1A5034E1003723D9 /* TextureOpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 373DAF0D1A5034E1003723D9 /* TextureOpenGL.cpp */; };
+		373DAF1E1A5034E1003723D9 /* TextureOpenGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 373DAF0E1A5034E1003723D9 /* TextureOpenGL.h */; };
+		37405EC3148F3E8F0057624D /* theorawrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37405EC1148F3E8F0057624D /* theorawrapper.cpp */; };
+		37405EC4148F3E8F0057624D /* theorawrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 37405EC2148F3E8F0057624D /* theorawrapper.h */; };
+		37500F871A59559A00C805EA /* TextureMetal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 37500F861A59559A00C805EA /* TextureMetal.mm */; };
+		378C8B32149006A800927CFE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378C8B31149006A800927CFE /* CoreFoundation.framework */; };
+		378C8B38149006A800927CFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 378C8B36149006A800927CFE /* InfoPlist.strings */; };
+		378C8B441490077A00927CFE /* theorawrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37405EC1148F3E8F0057624D /* theorawrapper.cpp */; };
+		378C8B451490079D00927CFE /* bitwise.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91B4148CED6E00C98160 /* bitwise.c */; };
+		378C8B461490079D00927CFE /* framing.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91B5148CED6E00C98160 /* framing.c */; };
+		378C8B47149007BE00927CFE /* apiwrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91C8148CEEF700C98160 /* apiwrapper.c */; };
+		378C8B48149007BE00927CFE /* bitpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91CA148CEEF700C98160 /* bitpack.c */; };
+		378C8B49149007BE00927CFE /* decinfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91CC148CEEF700C98160 /* decinfo.c */; };
+		378C8B4A149007BE00927CFE /* decapiwrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91EC148CEF0E00C98160 /* decapiwrapper.c */; };
+		378C8B4B149007BE00927CFE /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91CD148CEEF700C98160 /* decode.c */; };
+		378C8B4C149007BE00927CFE /* dequant.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91CE148CEEF700C98160 /* dequant.c */; };
+		378C8B4D149007BE00927CFE /* fragment.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D0148CEEF700C98160 /* fragment.c */; };
+		378C8B4E149007BE00927CFE /* huffdec.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D1148CEEF700C98160 /* huffdec.c */; };
+		378C8B4F149007BE00927CFE /* idct.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D3148CEEF700C98160 /* idct.c */; };
+		378C8B50149007BE00927CFE /* info.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D4148CEEF700C98160 /* info.c */; };
+		378C8B51149007BE00927CFE /* internal.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D5148CEEF700C98160 /* internal.c */; };
+		378C8B52149007BE00927CFE /* quant.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D7148CEEF700C98160 /* quant.c */; };
+		378C8B53149007BE00927CFE /* state.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D9148CEEF700C98160 /* state.c */; };
+		37B498341A53B6B8007DA3C1 /* libtheorawrapper.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37EC919F148CEC8700C98160 /* libtheorawrapper.a */; };
+		37C379F6148F3D660088368D /* armfrag-iPhone.S in Sources */ = {isa = PBXBuildFile; fileRef = 37C379F2148F3D660088368D /* armfrag-iPhone.S */; };
+		37C379F7148F3D660088368D /* armidct-iPhone.S in Sources */ = {isa = PBXBuildFile; fileRef = 37C379F3148F3D660088368D /* armidct-iPhone.S */; };
+		37C379F8148F3D660088368D /* armloop-iPhone.S in Sources */ = {isa = PBXBuildFile; fileRef = 37C379F4148F3D660088368D /* armloop-iPhone.S */; };
+		37EB92CF1A58006A009954D5 /* armbits-iPhone.S in Sources */ = {isa = PBXBuildFile; fileRef = 37EB92CE1A58006A009954D5 /* armbits-iPhone.S */; };
+		37EC91A3148CEC8700C98160 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EC91A2148CEC8700C98160 /* Foundation.framework */; };
+		37EC91B6148CED6E00C98160 /* bitwise.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91B4148CED6E00C98160 /* bitwise.c */; };
+		37EC91B7148CED6E00C98160 /* framing.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91B5148CED6E00C98160 /* framing.c */; };
+		37EC91BD148CEDD100C98160 /* ogg.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91BB148CEDD100C98160 /* ogg.h */; };
+		37EC91BE148CEDD100C98160 /* os_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91BC148CEDD100C98160 /* os_types.h */; };
+		37EC91C4148CEE1D00C98160 /* codec.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91C1148CEE1D00C98160 /* codec.h */; };
+		37EC91C5148CEE1D00C98160 /* theora.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91C2148CEE1D00C98160 /* theora.h */; };
+		37EC91C6148CEE1D00C98160 /* theoradec.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91C3148CEE1D00C98160 /* theoradec.h */; };
+		37EC91DA148CEEF700C98160 /* apiwrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91C8148CEEF700C98160 /* apiwrapper.c */; };
+		37EC91DB148CEEF700C98160 /* apiwrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91C9148CEEF700C98160 /* apiwrapper.h */; };
+		37EC91DC148CEEF700C98160 /* bitpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91CA148CEEF700C98160 /* bitpack.c */; };
+		37EC91DD148CEEF700C98160 /* bitpack.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91CB148CEEF700C98160 /* bitpack.h */; };
+		37EC91DE148CEEF700C98160 /* decinfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91CC148CEEF700C98160 /* decinfo.c */; };
+		37EC91DF148CEEF700C98160 /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91CD148CEEF700C98160 /* decode.c */; };
+		37EC91E0148CEEF700C98160 /* dequant.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91CE148CEEF700C98160 /* dequant.c */; };
+		37EC91E1148CEEF700C98160 /* dequant.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91CF148CEEF700C98160 /* dequant.h */; };
+		37EC91E2148CEEF700C98160 /* fragment.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D0148CEEF700C98160 /* fragment.c */; };
+		37EC91E3148CEEF700C98160 /* huffdec.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D1148CEEF700C98160 /* huffdec.c */; };
+		37EC91E4148CEEF700C98160 /* huffdec.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91D2148CEEF700C98160 /* huffdec.h */; };
+		37EC91E5148CEEF700C98160 /* idct.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D3148CEEF700C98160 /* idct.c */; };
+		37EC91E6148CEEF700C98160 /* info.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D4148CEEF700C98160 /* info.c */; };
+		37EC91E7148CEEF700C98160 /* internal.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D5148CEEF700C98160 /* internal.c */; };
+		37EC91E8148CEEF700C98160 /* internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91D6148CEEF700C98160 /* internal.h */; };
+		37EC91E9148CEEF700C98160 /* quant.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D7148CEEF700C98160 /* quant.c */; };
+		37EC91EA148CEEF700C98160 /* quant.h in Headers */ = {isa = PBXBuildFile; fileRef = 37EC91D8148CEEF700C98160 /* quant.h */; };
+		37EC91EB148CEEF700C98160 /* state.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D9148CEEF700C98160 /* state.c */; };
+		37EC91ED148CEF0E00C98160 /* decapiwrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91EC148CEF0E00C98160 /* decapiwrapper.c */; };
+		37EC91F7148CEF7500C98160 /* armcpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91F0148CEF7500C98160 /* armcpu.c */; };
+		37EC91FC148CEF7500C98160 /* armstate.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91F5148CEF7500C98160 /* armstate.c */; };
+		37F301EB18A4F61E00BACE4C /* dirac.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301DE18A4F61E00BACE4C /* dirac.c */; };
+		37F301EC18A4F61E00BACE4C /* dirac.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301DE18A4F61E00BACE4C /* dirac.c */; };
+		37F301ED18A4F61E00BACE4C /* metric_internal.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301DF18A4F61E00BACE4C /* metric_internal.c */; };
+		37F301EE18A4F61E00BACE4C /* metric_internal.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301DF18A4F61E00BACE4C /* metric_internal.c */; };
+		37F301EF18A4F61E00BACE4C /* oggz_auto.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E018A4F61E00BACE4C /* oggz_auto.c */; };
+		37F301F018A4F61E00BACE4C /* oggz_auto.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E018A4F61E00BACE4C /* oggz_auto.c */; };
+		37F301F118A4F61E00BACE4C /* oggz_comments.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E118A4F61E00BACE4C /* oggz_comments.c */; };
+		37F301F218A4F61E00BACE4C /* oggz_comments.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E118A4F61E00BACE4C /* oggz_comments.c */; };
+		37F301F318A4F61E00BACE4C /* oggz_dlist.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E218A4F61E00BACE4C /* oggz_dlist.c */; };
+		37F301F418A4F61E00BACE4C /* oggz_dlist.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E218A4F61E00BACE4C /* oggz_dlist.c */; };
+		37F301F518A4F61E00BACE4C /* oggz_io.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E318A4F61E00BACE4C /* oggz_io.c */; };
+		37F301F618A4F61E00BACE4C /* oggz_io.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E318A4F61E00BACE4C /* oggz_io.c */; };
+		37F301F718A4F61E00BACE4C /* oggz_read.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E418A4F61E00BACE4C /* oggz_read.c */; };
+		37F301F818A4F61E00BACE4C /* oggz_read.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E418A4F61E00BACE4C /* oggz_read.c */; };
+		37F301F918A4F61E00BACE4C /* oggz_seek.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E518A4F61E00BACE4C /* oggz_seek.c */; };
+		37F301FA18A4F61E00BACE4C /* oggz_seek.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E518A4F61E00BACE4C /* oggz_seek.c */; };
+		37F301FB18A4F61E00BACE4C /* oggz_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E618A4F61E00BACE4C /* oggz_stream.c */; };
+		37F301FC18A4F61E00BACE4C /* oggz_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E618A4F61E00BACE4C /* oggz_stream.c */; };
+		37F301FD18A4F61E00BACE4C /* oggz_table.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E718A4F61E00BACE4C /* oggz_table.c */; };
+		37F301FE18A4F61E00BACE4C /* oggz_table.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E718A4F61E00BACE4C /* oggz_table.c */; };
+		37F301FF18A4F61E00BACE4C /* oggz_vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E818A4F61E00BACE4C /* oggz_vector.c */; };
+		37F3020018A4F61E00BACE4C /* oggz_vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E818A4F61E00BACE4C /* oggz_vector.c */; };
+		37F3020118A4F61E00BACE4C /* oggz_write.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E918A4F61E00BACE4C /* oggz_write.c */; };
+		37F3020218A4F61E00BACE4C /* oggz_write.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301E918A4F61E00BACE4C /* oggz_write.c */; };
+		37F3020318A4F61E00BACE4C /* oggz.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301EA18A4F61E00BACE4C /* oggz.c */; };
+		37F3020418A4F61E00BACE4C /* oggz.c in Sources */ = {isa = PBXBuildFile; fileRef = 37F301EA18A4F61E00BACE4C /* oggz.c */; };
+		37F3021018A4F64C00BACE4C /* debug.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3020618A4F64C00BACE4C /* debug.h */; };
+		37F3021118A4F64C00BACE4C /* dirac.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3020718A4F64C00BACE4C /* dirac.h */; };
+		37F3021218A4F64C00BACE4C /* oggz_auto.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3020818A4F64C00BACE4C /* oggz_auto.h */; };
+		37F3021318A4F64C00BACE4C /* oggz_byteorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3020918A4F64C00BACE4C /* oggz_byteorder.h */; };
+		37F3021418A4F64C00BACE4C /* oggz_compat.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3020A18A4F64C00BACE4C /* oggz_compat.h */; };
+		37F3021518A4F64C00BACE4C /* oggz_dlist.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3020B18A4F64C00BACE4C /* oggz_dlist.h */; };
+		37F3021618A4F64C00BACE4C /* oggz_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3020C18A4F64C00BACE4C /* oggz_macros.h */; };
+		37F3021718A4F64C00BACE4C /* oggz_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3020D18A4F64C00BACE4C /* oggz_private.h */; };
+		37F3021818A4F64C00BACE4C /* oggz_stream_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3020E18A4F64C00BACE4C /* oggz_stream_private.h */; };
+		37F3021918A4F64C00BACE4C /* oggz_vector.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3020F18A4F64C00BACE4C /* oggz_vector.h */; };
+		37F3021B18A4FC6300BACE4C /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3021A18A4FC6300BACE4C /* config.h */; };
+		37F3022218A5CC6300BACE4C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F3022118A5CC6300BACE4C /* OpenGL.framework */; };
+		37F3022418A7A02000BACE4C /* armbits.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3022318A7A02000BACE4C /* armbits.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		372D619E1A5040FC00BA690E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Users/dan/Documents/MobileMovieTexture/MMTUnity/Assets/Plugins;
+			dstSubfolderSpec = 0;
+			files = (
+				372D619F1A50410000BA690E /* theorawrapper.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37B498331A53B6B2007DA3C1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Users/dan/Documents/MobileMovieTexture/MMTUnity/Assets/Plugins/iOS;
+			dstSubfolderSpec = 0;
+			files = (
+				37B498341A53B6B8007DA3C1 /* libtheorawrapper.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		371E209B1A6BCFB7000B2A85 /* mmxencfrag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mmxencfrag.c; path = ../../theora/lib/x86/mmxencfrag.c; sourceTree = "<group>"; };
+		371E209C1A6BCFB7000B2A85 /* mmxfrag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mmxfrag.c; path = ../../theora/lib/x86/mmxfrag.c; sourceTree = "<group>"; };
+		371E209D1A6BCFB7000B2A85 /* mmxidct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mmxidct.c; path = ../../theora/lib/x86/mmxidct.c; sourceTree = "<group>"; };
+		371E209E1A6BCFB7000B2A85 /* mmxstate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mmxstate.c; path = ../../theora/lib/x86/mmxstate.c; sourceTree = "<group>"; };
+		371E20A01A6BCFB7000B2A85 /* sse2idct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sse2idct.c; path = ../../theora/lib/x86/sse2idct.c; sourceTree = "<group>"; };
+		371E20A11A6BCFB7000B2A85 /* x86cpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = x86cpu.c; path = ../../theora/lib/x86/x86cpu.c; sourceTree = "<group>"; };
+		371E20A21A6BCFB7000B2A85 /* x86state.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = x86state.c; path = ../../theora/lib/x86/x86state.c; sourceTree = "<group>"; };
+		373DAF041A5034E1003723D9 /* GfxDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GfxDevice.cpp; path = ../../theorawrapper/GfxDevice.cpp; sourceTree = "<group>"; };
+		373DAF051A5034E1003723D9 /* GfxDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GfxDevice.h; path = ../../theorawrapper/GfxDevice.h; sourceTree = "<group>"; };
+		373DAF061A5034E1003723D9 /* MathHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MathHelpers.h; path = ../../theorawrapper/MathHelpers.h; sourceTree = "<group>"; };
+		373DAF071A5034E1003723D9 /* TextureContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextureContext.cpp; path = ../../theorawrapper/TextureContext.cpp; sourceTree = "<group>"; };
+		373DAF081A5034E1003723D9 /* TextureContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureContext.h; path = ../../theorawrapper/TextureContext.h; sourceTree = "<group>"; };
+		373DAF091A5034E1003723D9 /* TextureD3D9.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextureD3D9.cpp; path = ../../theorawrapper/TextureD3D9.cpp; sourceTree = "<group>"; };
+		373DAF0A1A5034E1003723D9 /* TextureD3D9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureD3D9.h; path = ../../theorawrapper/TextureD3D9.h; sourceTree = "<group>"; };
+		373DAF0B1A5034E1003723D9 /* TextureHandle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextureHandle.cpp; path = ../../theorawrapper/TextureHandle.cpp; sourceTree = "<group>"; };
+		373DAF0C1A5034E1003723D9 /* TextureHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureHandle.h; path = ../../theorawrapper/TextureHandle.h; sourceTree = "<group>"; };
+		373DAF0D1A5034E1003723D9 /* TextureOpenGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextureOpenGL.cpp; path = ../../theorawrapper/TextureOpenGL.cpp; sourceTree = "<group>"; };
+		373DAF0E1A5034E1003723D9 /* TextureOpenGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureOpenGL.h; path = ../../theorawrapper/TextureOpenGL.h; sourceTree = "<group>"; };
+		37405EC1148F3E8F0057624D /* theorawrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = theorawrapper.cpp; path = ../../theorawrapper/theorawrapper.cpp; sourceTree = "<group>"; };
+		37405EC2148F3E8F0057624D /* theorawrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = theorawrapper.h; path = ../../theorawrapper/theorawrapper.h; sourceTree = "<group>"; };
+		37500F861A59559A00C805EA /* TextureMetal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TextureMetal.mm; path = ../../theorawrapper/TextureMetal.mm; sourceTree = "<group>"; };
+		37500F881A5ABEB200C805EA /* TextureMetal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureMetal.h; path = ../../theorawrapper/TextureMetal.h; sourceTree = "<group>"; };
+		378C8B30149006A800927CFE /* theorawrapper.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = theorawrapper.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		378C8B31149006A800927CFE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		378C8B35149006A800927CFE /* theorawrapperosx-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "theorawrapperosx-Info.plist"; sourceTree = "<group>"; };
+		378C8B37149006A800927CFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		378C8B39149006A800927CFE /* theorawrapperosx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "theorawrapperosx-Prefix.pch"; sourceTree = "<group>"; };
+		37C379F2148F3D660088368D /* armfrag-iPhone.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "armfrag-iPhone.S"; path = "../../theora/lib/arm/armfrag-iPhone.S"; sourceTree = "<group>"; };
+		37C379F3148F3D660088368D /* armidct-iPhone.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "armidct-iPhone.S"; path = "../../theora/lib/arm/armidct-iPhone.S"; sourceTree = "<group>"; };
+		37C379F4148F3D660088368D /* armloop-iPhone.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "armloop-iPhone.S"; path = "../../theora/lib/arm/armloop-iPhone.S"; sourceTree = "<group>"; };
+		37EB92CE1A58006A009954D5 /* armbits-iPhone.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "armbits-iPhone.S"; path = "../../theora/lib/arm/armbits-iPhone.S"; sourceTree = "<group>"; };
+		37EC919F148CEC8700C98160 /* libtheorawrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtheorawrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		37EC91A2148CEC8700C98160 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		37EC91B4148CED6E00C98160 /* bitwise.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitwise.c; path = ../../ogg/src/bitwise.c; sourceTree = "<group>"; };
+		37EC91B5148CED6E00C98160 /* framing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = framing.c; path = ../../ogg/src/framing.c; sourceTree = "<group>"; };
+		37EC91BB148CEDD100C98160 /* ogg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ogg.h; path = ../../ogg/include/ogg/ogg.h; sourceTree = "<group>"; };
+		37EC91BC148CEDD100C98160 /* os_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = os_types.h; path = ../../ogg/include/ogg/os_types.h; sourceTree = "<group>"; };
+		37EC91C1148CEE1D00C98160 /* codec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = codec.h; path = ../../theora/include/theora/codec.h; sourceTree = "<group>"; };
+		37EC91C2148CEE1D00C98160 /* theora.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = theora.h; path = ../../theora/include/theora/theora.h; sourceTree = "<group>"; };
+		37EC91C3148CEE1D00C98160 /* theoradec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = theoradec.h; path = ../../theora/include/theora/theoradec.h; sourceTree = "<group>"; };
+		37EC91C8148CEEF700C98160 /* apiwrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = apiwrapper.c; path = ../../theora/lib/apiwrapper.c; sourceTree = "<group>"; };
+		37EC91C9148CEEF700C98160 /* apiwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apiwrapper.h; path = ../../theora/lib/apiwrapper.h; sourceTree = "<group>"; };
+		37EC91CA148CEEF700C98160 /* bitpack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitpack.c; path = ../../theora/lib/bitpack.c; sourceTree = "<group>"; };
+		37EC91CB148CEEF700C98160 /* bitpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitpack.h; path = ../../theora/lib/bitpack.h; sourceTree = "<group>"; };
+		37EC91CC148CEEF700C98160 /* decinfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = decinfo.c; path = ../../theora/lib/decinfo.c; sourceTree = "<group>"; };
+		37EC91CD148CEEF700C98160 /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = decode.c; path = ../../theora/lib/decode.c; sourceTree = "<group>"; };
+		37EC91CE148CEEF700C98160 /* dequant.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dequant.c; path = ../../theora/lib/dequant.c; sourceTree = "<group>"; };
+		37EC91CF148CEEF700C98160 /* dequant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dequant.h; path = ../../theora/lib/dequant.h; sourceTree = "<group>"; };
+		37EC91D0148CEEF700C98160 /* fragment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fragment.c; path = ../../theora/lib/fragment.c; sourceTree = "<group>"; };
+		37EC91D1148CEEF700C98160 /* huffdec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = huffdec.c; path = ../../theora/lib/huffdec.c; sourceTree = "<group>"; };
+		37EC91D2148CEEF700C98160 /* huffdec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = huffdec.h; path = ../../theora/lib/huffdec.h; sourceTree = "<group>"; };
+		37EC91D3148CEEF700C98160 /* idct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = idct.c; path = ../../theora/lib/idct.c; sourceTree = "<group>"; };
+		37EC91D4148CEEF700C98160 /* info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = info.c; path = ../../theora/lib/info.c; sourceTree = "<group>"; };
+		37EC91D5148CEEF700C98160 /* internal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = internal.c; path = ../../theora/lib/internal.c; sourceTree = "<group>"; };
+		37EC91D6148CEEF700C98160 /* internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = internal.h; path = ../../theora/lib/internal.h; sourceTree = "<group>"; };
+		37EC91D7148CEEF700C98160 /* quant.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = quant.c; path = ../../theora/lib/quant.c; sourceTree = "<group>"; };
+		37EC91D8148CEEF700C98160 /* quant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = quant.h; path = ../../theora/lib/quant.h; sourceTree = "<group>"; };
+		37EC91D9148CEEF700C98160 /* state.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = state.c; path = ../../theora/lib/state.c; sourceTree = "<group>"; };
+		37EC91EC148CEF0E00C98160 /* decapiwrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = decapiwrapper.c; path = ../../theora/lib/decapiwrapper.c; sourceTree = "<group>"; };
+		37EC91F0148CEF7500C98160 /* armcpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = armcpu.c; path = ../../theora/lib/arm/armcpu.c; sourceTree = "<group>"; };
+		37EC91F5148CEF7500C98160 /* armstate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = armstate.c; path = ../../theora/lib/arm/armstate.c; sourceTree = "<group>"; };
+		37F301DE18A4F61E00BACE4C /* dirac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dirac.c; path = ../../oggz/src/liboggz/dirac.c; sourceTree = "<group>"; };
+		37F301DF18A4F61E00BACE4C /* metric_internal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = metric_internal.c; path = ../../oggz/src/liboggz/metric_internal.c; sourceTree = "<group>"; };
+		37F301E018A4F61E00BACE4C /* oggz_auto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_auto.c; path = ../../oggz/src/liboggz/oggz_auto.c; sourceTree = "<group>"; };
+		37F301E118A4F61E00BACE4C /* oggz_comments.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_comments.c; path = ../../oggz/src/liboggz/oggz_comments.c; sourceTree = "<group>"; };
+		37F301E218A4F61E00BACE4C /* oggz_dlist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_dlist.c; path = ../../oggz/src/liboggz/oggz_dlist.c; sourceTree = "<group>"; };
+		37F301E318A4F61E00BACE4C /* oggz_io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_io.c; path = ../../oggz/src/liboggz/oggz_io.c; sourceTree = "<group>"; };
+		37F301E418A4F61E00BACE4C /* oggz_read.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_read.c; path = ../../oggz/src/liboggz/oggz_read.c; sourceTree = "<group>"; };
+		37F301E518A4F61E00BACE4C /* oggz_seek.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_seek.c; path = ../../oggz/src/liboggz/oggz_seek.c; sourceTree = "<group>"; };
+		37F301E618A4F61E00BACE4C /* oggz_stream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_stream.c; path = ../../oggz/src/liboggz/oggz_stream.c; sourceTree = "<group>"; };
+		37F301E718A4F61E00BACE4C /* oggz_table.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_table.c; path = ../../oggz/src/liboggz/oggz_table.c; sourceTree = "<group>"; };
+		37F301E818A4F61E00BACE4C /* oggz_vector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_vector.c; path = ../../oggz/src/liboggz/oggz_vector.c; sourceTree = "<group>"; };
+		37F301E918A4F61E00BACE4C /* oggz_write.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_write.c; path = ../../oggz/src/liboggz/oggz_write.c; sourceTree = "<group>"; };
+		37F301EA18A4F61E00BACE4C /* oggz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz.c; path = ../../oggz/src/liboggz/oggz.c; sourceTree = "<group>"; };
+		37F3020618A4F64C00BACE4C /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = debug.h; path = ../../oggz/src/liboggz/debug.h; sourceTree = "<group>"; };
+		37F3020718A4F64C00BACE4C /* dirac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dirac.h; path = ../../oggz/src/liboggz/dirac.h; sourceTree = "<group>"; };
+		37F3020818A4F64C00BACE4C /* oggz_auto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_auto.h; path = ../../oggz/src/liboggz/oggz_auto.h; sourceTree = "<group>"; };
+		37F3020918A4F64C00BACE4C /* oggz_byteorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_byteorder.h; path = ../../oggz/src/liboggz/oggz_byteorder.h; sourceTree = "<group>"; };
+		37F3020A18A4F64C00BACE4C /* oggz_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_compat.h; path = ../../oggz/src/liboggz/oggz_compat.h; sourceTree = "<group>"; };
+		37F3020B18A4F64C00BACE4C /* oggz_dlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_dlist.h; path = ../../oggz/src/liboggz/oggz_dlist.h; sourceTree = "<group>"; };
+		37F3020C18A4F64C00BACE4C /* oggz_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_macros.h; path = ../../oggz/src/liboggz/oggz_macros.h; sourceTree = "<group>"; };
+		37F3020D18A4F64C00BACE4C /* oggz_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_private.h; path = ../../oggz/src/liboggz/oggz_private.h; sourceTree = "<group>"; };
+		37F3020E18A4F64C00BACE4C /* oggz_stream_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_stream_private.h; path = ../../oggz/src/liboggz/oggz_stream_private.h; sourceTree = "<group>"; };
+		37F3020F18A4F64C00BACE4C /* oggz_vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_vector.h; path = ../../oggz/src/liboggz/oggz_vector.h; sourceTree = "<group>"; };
+		37F3021A18A4FC6300BACE4C /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../../oggz/src/liboggz/config.h; sourceTree = "<group>"; };
+		37F3022118A5CC6300BACE4C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
+		37F3022318A7A02000BACE4C /* armbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = armbits.h; path = ../../theora/lib/arm/armbits.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		378C8B2D149006A800927CFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F3022218A5CC6300BACE4C /* OpenGL.framework in Frameworks */,
+				378C8B32149006A800927CFE /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37EC919C148CEC8700C98160 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37EC91A3148CEC8700C98160 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		371E209A1A6BC8B9000B2A85 /* x86 */ = {
+			isa = PBXGroup;
+			children = (
+				371E209B1A6BCFB7000B2A85 /* mmxencfrag.c */,
+				371E209C1A6BCFB7000B2A85 /* mmxfrag.c */,
+				371E209D1A6BCFB7000B2A85 /* mmxidct.c */,
+				371E209E1A6BCFB7000B2A85 /* mmxstate.c */,
+				371E20A01A6BCFB7000B2A85 /* sse2idct.c */,
+				371E20A11A6BCFB7000B2A85 /* x86cpu.c */,
+				371E20A21A6BCFB7000B2A85 /* x86state.c */,
+			);
+			name = x86;
+			sourceTree = "<group>";
+		};
+		378C8B33149006A800927CFE /* theorawrapperosx */ = {
+			isa = PBXGroup;
+			children = (
+				378C8B34149006A800927CFE /* Supporting Files */,
+			);
+			path = theorawrapperosx;
+			sourceTree = "<group>";
+		};
+		378C8B34149006A800927CFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				378C8B35149006A800927CFE /* theorawrapperosx-Info.plist */,
+				378C8B36149006A800927CFE /* InfoPlist.strings */,
+				378C8B39149006A800927CFE /* theorawrapperosx-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37EC9194148CEC8600C98160 = {
+			isa = PBXGroup;
+			children = (
+				37500F881A5ABEB200C805EA /* TextureMetal.h */,
+				37500F861A59559A00C805EA /* TextureMetal.mm */,
+				373DAF041A5034E1003723D9 /* GfxDevice.cpp */,
+				373DAF051A5034E1003723D9 /* GfxDevice.h */,
+				373DAF061A5034E1003723D9 /* MathHelpers.h */,
+				373DAF071A5034E1003723D9 /* TextureContext.cpp */,
+				373DAF081A5034E1003723D9 /* TextureContext.h */,
+				373DAF091A5034E1003723D9 /* TextureD3D9.cpp */,
+				373DAF0A1A5034E1003723D9 /* TextureD3D9.h */,
+				373DAF0B1A5034E1003723D9 /* TextureHandle.cpp */,
+				373DAF0C1A5034E1003723D9 /* TextureHandle.h */,
+				373DAF0D1A5034E1003723D9 /* TextureOpenGL.cpp */,
+				373DAF0E1A5034E1003723D9 /* TextureOpenGL.h */,
+				37F301DC18A4F5B400BACE4C /* liboggz_static */,
+				37EC91B8148CED8800C98160 /* libtheora_static */,
+				37EC91B3148CED4A00C98160 /* libogg_static */,
+				37405EC1148F3E8F0057624D /* theorawrapper.cpp */,
+				37405EC2148F3E8F0057624D /* theorawrapper.h */,
+				378C8B33149006A800927CFE /* theorawrapperosx */,
+				37EC91A1148CEC8700C98160 /* Frameworks */,
+				37EC91A0148CEC8700C98160 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37EC91A0148CEC8700C98160 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37EC919F148CEC8700C98160 /* libtheorawrapper.a */,
+				378C8B30149006A800927CFE /* theorawrapper.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37EC91A1148CEC8700C98160 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37F3022118A5CC6300BACE4C /* OpenGL.framework */,
+				37EC91A2148CEC8700C98160 /* Foundation.framework */,
+				378C8B31149006A800927CFE /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37EC91B3148CED4A00C98160 /* libogg_static */ = {
+			isa = PBXGroup;
+			children = (
+				37EC91BA148CEDB900C98160 /* Header Files */,
+				37EC91B9148CED9B00C98160 /* Source Files */,
+			);
+			name = libogg_static;
+			sourceTree = "<group>";
+		};
+		37EC91B8148CED8800C98160 /* libtheora_static */ = {
+			isa = PBXGroup;
+			children = (
+				37EC91C7148CEE2D00C98160 /* lib */,
+				37EC91BF148CEDF100C98160 /* include */,
+			);
+			name = libtheora_static;
+			sourceTree = "<group>";
+		};
+		37EC91B9148CED9B00C98160 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				37EC91B4148CED6E00C98160 /* bitwise.c */,
+				37EC91B5148CED6E00C98160 /* framing.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		37EC91BA148CEDB900C98160 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				37EC91BB148CEDD100C98160 /* ogg.h */,
+				37EC91BC148CEDD100C98160 /* os_types.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		37EC91BF148CEDF100C98160 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				37EC91C0148CEDF900C98160 /* theora */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		37EC91C0148CEDF900C98160 /* theora */ = {
+			isa = PBXGroup;
+			children = (
+				37EC91C1148CEE1D00C98160 /* codec.h */,
+				37EC91C2148CEE1D00C98160 /* theora.h */,
+				37EC91C3148CEE1D00C98160 /* theoradec.h */,
+			);
+			name = theora;
+			sourceTree = "<group>";
+		};
+		37EC91C7148CEE2D00C98160 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				371E209A1A6BC8B9000B2A85 /* x86 */,
+				37EC91EE148CEF3200C98160 /* arm */,
+				37EC91C8148CEEF700C98160 /* apiwrapper.c */,
+				37EC91C9148CEEF700C98160 /* apiwrapper.h */,
+				37EC91CA148CEEF700C98160 /* bitpack.c */,
+				37EC91CB148CEEF700C98160 /* bitpack.h */,
+				37EC91CC148CEEF700C98160 /* decinfo.c */,
+				37EC91EC148CEF0E00C98160 /* decapiwrapper.c */,
+				37EC91CD148CEEF700C98160 /* decode.c */,
+				37EC91CE148CEEF700C98160 /* dequant.c */,
+				37EC91CF148CEEF700C98160 /* dequant.h */,
+				37EC91D0148CEEF700C98160 /* fragment.c */,
+				37EC91D1148CEEF700C98160 /* huffdec.c */,
+				37EC91D2148CEEF700C98160 /* huffdec.h */,
+				37EC91D3148CEEF700C98160 /* idct.c */,
+				37EC91D4148CEEF700C98160 /* info.c */,
+				37EC91D5148CEEF700C98160 /* internal.c */,
+				37EC91D6148CEEF700C98160 /* internal.h */,
+				37EC91D7148CEEF700C98160 /* quant.c */,
+				37EC91D8148CEEF700C98160 /* quant.h */,
+				37EC91D9148CEEF700C98160 /* state.c */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		37EC91EE148CEF3200C98160 /* arm */ = {
+			isa = PBXGroup;
+			children = (
+				37EB92CE1A58006A009954D5 /* armbits-iPhone.S */,
+				37F3022318A7A02000BACE4C /* armbits.h */,
+				37EC91F0148CEF7500C98160 /* armcpu.c */,
+				37EC91F5148CEF7500C98160 /* armstate.c */,
+				37C379F2148F3D660088368D /* armfrag-iPhone.S */,
+				37C379F3148F3D660088368D /* armidct-iPhone.S */,
+				37C379F4148F3D660088368D /* armloop-iPhone.S */,
+			);
+			name = arm;
+			sourceTree = "<group>";
+		};
+		37F301DC18A4F5B400BACE4C /* liboggz_static */ = {
+			isa = PBXGroup;
+			children = (
+				37F3020518A4F63000BACE4C /* include */,
+				37F301DD18A4F5C600BACE4C /* lib */,
+			);
+			name = liboggz_static;
+			sourceTree = "<group>";
+		};
+		37F301DD18A4F5C600BACE4C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				37F301DE18A4F61E00BACE4C /* dirac.c */,
+				37F301DF18A4F61E00BACE4C /* metric_internal.c */,
+				37F301E018A4F61E00BACE4C /* oggz_auto.c */,
+				37F301E118A4F61E00BACE4C /* oggz_comments.c */,
+				37F301E218A4F61E00BACE4C /* oggz_dlist.c */,
+				37F301E318A4F61E00BACE4C /* oggz_io.c */,
+				37F301E418A4F61E00BACE4C /* oggz_read.c */,
+				37F301E518A4F61E00BACE4C /* oggz_seek.c */,
+				37F301E618A4F61E00BACE4C /* oggz_stream.c */,
+				37F301E718A4F61E00BACE4C /* oggz_table.c */,
+				37F301E818A4F61E00BACE4C /* oggz_vector.c */,
+				37F301E918A4F61E00BACE4C /* oggz_write.c */,
+				37F301EA18A4F61E00BACE4C /* oggz.c */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		37F3020518A4F63000BACE4C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				37F3021A18A4FC6300BACE4C /* config.h */,
+				37F3020618A4F64C00BACE4C /* debug.h */,
+				37F3020718A4F64C00BACE4C /* dirac.h */,
+				37F3020818A4F64C00BACE4C /* oggz_auto.h */,
+				37F3020918A4F64C00BACE4C /* oggz_byteorder.h */,
+				37F3020A18A4F64C00BACE4C /* oggz_compat.h */,
+				37F3020B18A4F64C00BACE4C /* oggz_dlist.h */,
+				37F3020C18A4F64C00BACE4C /* oggz_macros.h */,
+				37F3020D18A4F64C00BACE4C /* oggz_private.h */,
+				37F3020E18A4F64C00BACE4C /* oggz_stream_private.h */,
+				37F3020F18A4F64C00BACE4C /* oggz_vector.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		37EC919D148CEC8700C98160 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				373DAF181A5034E1003723D9 /* TextureD3D9.h in Headers */,
+				37EC91BD148CEDD100C98160 /* ogg.h in Headers */,
+				37F3022418A7A02000BACE4C /* armbits.h in Headers */,
+				37EC91BE148CEDD100C98160 /* os_types.h in Headers */,
+				37EC91C4148CEE1D00C98160 /* codec.h in Headers */,
+				37EC91C5148CEE1D00C98160 /* theora.h in Headers */,
+				37F3021B18A4FC6300BACE4C /* config.h in Headers */,
+				37EC91C6148CEE1D00C98160 /* theoradec.h in Headers */,
+				37EC91DB148CEEF700C98160 /* apiwrapper.h in Headers */,
+				373DAF1E1A5034E1003723D9 /* TextureOpenGL.h in Headers */,
+				373DAF111A5034E1003723D9 /* GfxDevice.h in Headers */,
+				37F3021118A4F64C00BACE4C /* dirac.h in Headers */,
+				37EC91DD148CEEF700C98160 /* bitpack.h in Headers */,
+				37F3021818A4F64C00BACE4C /* oggz_stream_private.h in Headers */,
+				37EC91E1148CEEF700C98160 /* dequant.h in Headers */,
+				37F3021918A4F64C00BACE4C /* oggz_vector.h in Headers */,
+				37F3021418A4F64C00BACE4C /* oggz_compat.h in Headers */,
+				37EC91E4148CEEF700C98160 /* huffdec.h in Headers */,
+				373DAF121A5034E1003723D9 /* MathHelpers.h in Headers */,
+				37F3021018A4F64C00BACE4C /* debug.h in Headers */,
+				373DAF1B1A5034E1003723D9 /* TextureHandle.h in Headers */,
+				37F3021618A4F64C00BACE4C /* oggz_macros.h in Headers */,
+				373DAF151A5034E1003723D9 /* TextureContext.h in Headers */,
+				37F3021718A4F64C00BACE4C /* oggz_private.h in Headers */,
+				37EC91E8148CEEF700C98160 /* internal.h in Headers */,
+				37F3021318A4F64C00BACE4C /* oggz_byteorder.h in Headers */,
+				37EC91EA148CEEF700C98160 /* quant.h in Headers */,
+				37F3021218A4F64C00BACE4C /* oggz_auto.h in Headers */,
+				37F3021518A4F64C00BACE4C /* oggz_dlist.h in Headers */,
+				37405EC4148F3E8F0057624D /* theorawrapper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		378C8B2F149006A800927CFE /* theorawrapperosx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 378C8B3A149006A800927CFE /* Build configuration list for PBXNativeTarget "theorawrapperosx" */;
+			buildPhases = (
+				378C8B2C149006A800927CFE /* Sources */,
+				378C8B2D149006A800927CFE /* Frameworks */,
+				378C8B2E149006A800927CFE /* Resources */,
+				372D619E1A5040FC00BA690E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = theorawrapperosx;
+			productName = theorawrapperosx;
+			productReference = 378C8B30149006A800927CFE /* theorawrapper.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		37EC919E148CEC8700C98160 /* theorawrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37EC91AC148CEC8700C98160 /* Build configuration list for PBXNativeTarget "theorawrapper" */;
+			buildPhases = (
+				37EC919B148CEC8700C98160 /* Sources */,
+				37EC919C148CEC8700C98160 /* Frameworks */,
+				37EC919D148CEC8700C98160 /* Headers */,
+				37B498331A53B6B2007DA3C1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = theorawrapper;
+			productName = theorawrapper;
+			productReference = 37EC919F148CEC8700C98160 /* libtheorawrapper.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37EC9196148CEC8600C98160 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Defiant Development PTY Ltd";
+			};
+			buildConfigurationList = 37EC9199148CEC8600C98160 /* Build configuration list for PBXProject "theorawrapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 37EC9194148CEC8600C98160;
+			productRefGroup = 37EC91A0148CEC8700C98160 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37EC919E148CEC8700C98160 /* theorawrapper */,
+				378C8B2F149006A800927CFE /* theorawrapperosx */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		378C8B2E149006A800927CFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				378C8B38149006A800927CFE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		378C8B2C149006A800927CFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F301EC18A4F61E00BACE4C /* dirac.c in Sources */,
+				378C8B441490077A00927CFE /* theorawrapper.cpp in Sources */,
+				37F3020218A4F61E00BACE4C /* oggz_write.c in Sources */,
+				378C8B451490079D00927CFE /* bitwise.c in Sources */,
+				371E20A31A6BCFB7000B2A85 /* mmxencfrag.c in Sources */,
+				378C8B461490079D00927CFE /* framing.c in Sources */,
+				373DAF171A5034E1003723D9 /* TextureD3D9.cpp in Sources */,
+				378C8B47149007BE00927CFE /* apiwrapper.c in Sources */,
+				378C8B48149007BE00927CFE /* bitpack.c in Sources */,
+				373DAF141A5034E1003723D9 /* TextureContext.cpp in Sources */,
+				378C8B49149007BE00927CFE /* decinfo.c in Sources */,
+				378C8B4A149007BE00927CFE /* decapiwrapper.c in Sources */,
+				378C8B4B149007BE00927CFE /* decode.c in Sources */,
+				37F301FC18A4F61E00BACE4C /* oggz_stream.c in Sources */,
+				371E20AA1A6BCFB7000B2A85 /* x86state.c in Sources */,
+				373DAF1A1A5034E1003723D9 /* TextureHandle.cpp in Sources */,
+				373DAF1D1A5034E1003723D9 /* TextureOpenGL.cpp in Sources */,
+				373DAF101A5034E1003723D9 /* GfxDevice.cpp in Sources */,
+				37F301F418A4F61E00BACE4C /* oggz_dlist.c in Sources */,
+				37F3020418A4F61E00BACE4C /* oggz.c in Sources */,
+				37F301FA18A4F61E00BACE4C /* oggz_seek.c in Sources */,
+				371E20A81A6BCFB7000B2A85 /* sse2idct.c in Sources */,
+				371E20A41A6BCFB7000B2A85 /* mmxfrag.c in Sources */,
+				378C8B4C149007BE00927CFE /* dequant.c in Sources */,
+				378C8B4D149007BE00927CFE /* fragment.c in Sources */,
+				37F301F618A4F61E00BACE4C /* oggz_io.c in Sources */,
+				371E20A51A6BCFB7000B2A85 /* mmxidct.c in Sources */,
+				378C8B4E149007BE00927CFE /* huffdec.c in Sources */,
+				37F301F218A4F61E00BACE4C /* oggz_comments.c in Sources */,
+				37F301F818A4F61E00BACE4C /* oggz_read.c in Sources */,
+				371E20A61A6BCFB7000B2A85 /* mmxstate.c in Sources */,
+				371E20A91A6BCFB7000B2A85 /* x86cpu.c in Sources */,
+				378C8B4F149007BE00927CFE /* idct.c in Sources */,
+				37F301F018A4F61E00BACE4C /* oggz_auto.c in Sources */,
+				378C8B50149007BE00927CFE /* info.c in Sources */,
+				378C8B51149007BE00927CFE /* internal.c in Sources */,
+				378C8B52149007BE00927CFE /* quant.c in Sources */,
+				37F3020018A4F61E00BACE4C /* oggz_vector.c in Sources */,
+				37F301EE18A4F61E00BACE4C /* metric_internal.c in Sources */,
+				378C8B53149007BE00927CFE /* state.c in Sources */,
+				37F301FE18A4F61E00BACE4C /* oggz_table.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37EC919B148CEC8700C98160 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F301FB18A4F61E00BACE4C /* oggz_stream.c in Sources */,
+				373DAF0F1A5034E1003723D9 /* GfxDevice.cpp in Sources */,
+				37EC91B6148CED6E00C98160 /* bitwise.c in Sources */,
+				37EC91B7148CED6E00C98160 /* framing.c in Sources */,
+				37EC91DA148CEEF700C98160 /* apiwrapper.c in Sources */,
+				37EC91DC148CEEF700C98160 /* bitpack.c in Sources */,
+				37F301F918A4F61E00BACE4C /* oggz_seek.c in Sources */,
+				37EC91DE148CEEF700C98160 /* decinfo.c in Sources */,
+				37EC91DF148CEEF700C98160 /* decode.c in Sources */,
+				373DAF1C1A5034E1003723D9 /* TextureOpenGL.cpp in Sources */,
+				373DAF131A5034E1003723D9 /* TextureContext.cpp in Sources */,
+				37EC91E0148CEEF700C98160 /* dequant.c in Sources */,
+				37EC91E2148CEEF700C98160 /* fragment.c in Sources */,
+				37F301EF18A4F61E00BACE4C /* oggz_auto.c in Sources */,
+				37EC91E3148CEEF700C98160 /* huffdec.c in Sources */,
+				37EC91E5148CEEF700C98160 /* idct.c in Sources */,
+				37F301ED18A4F61E00BACE4C /* metric_internal.c in Sources */,
+				37F301F718A4F61E00BACE4C /* oggz_read.c in Sources */,
+				37EC91E6148CEEF700C98160 /* info.c in Sources */,
+				37EB92CF1A58006A009954D5 /* armbits-iPhone.S in Sources */,
+				37EC91E7148CEEF700C98160 /* internal.c in Sources */,
+				37EC91E9148CEEF700C98160 /* quant.c in Sources */,
+				37EC91EB148CEEF700C98160 /* state.c in Sources */,
+				373DAF191A5034E1003723D9 /* TextureHandle.cpp in Sources */,
+				37F301F518A4F61E00BACE4C /* oggz_io.c in Sources */,
+				37F3020118A4F61E00BACE4C /* oggz_write.c in Sources */,
+				37F301FF18A4F61E00BACE4C /* oggz_vector.c in Sources */,
+				37500F871A59559A00C805EA /* TextureMetal.mm in Sources */,
+				37EC91ED148CEF0E00C98160 /* decapiwrapper.c in Sources */,
+				37EC91F7148CEF7500C98160 /* armcpu.c in Sources */,
+				37EC91FC148CEF7500C98160 /* armstate.c in Sources */,
+				373DAF161A5034E1003723D9 /* TextureD3D9.cpp in Sources */,
+				37F301F118A4F61E00BACE4C /* oggz_comments.c in Sources */,
+				37C379F6148F3D660088368D /* armfrag-iPhone.S in Sources */,
+				37F301EB18A4F61E00BACE4C /* dirac.c in Sources */,
+				37F301FD18A4F61E00BACE4C /* oggz_table.c in Sources */,
+				37F3020318A4F61E00BACE4C /* oggz.c in Sources */,
+				37C379F7148F3D660088368D /* armidct-iPhone.S in Sources */,
+				37F301F318A4F61E00BACE4C /* oggz_dlist.c in Sources */,
+				37C379F8148F3D660088368D /* armloop-iPhone.S in Sources */,
+				37405EC3148F3E8F0057624D /* theorawrapper.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		378C8B36149006A800927CFE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				378C8B37149006A800927CFE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		378C8B3B149006A800927CFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-iphoneos";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "theorawrapperosx/theorawrapperosx-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					OSX,
+					SUPPORT_OPENGL,
+					OC_X86_ASM,
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				HEADER_SEARCH_PATHS = (
+					../../ogg/include,
+					../../oggz/include,
+					../../theora/include,
+					../../,
+				);
+				INFOPLIST_FILE = "theorawrapperosx/theorawrapperosx-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = "$(PROJECT_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		378C8B3C149006A800927CFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-iphoneos";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "theorawrapperosx/theorawrapperosx-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					OSX,
+					SUPPORT_OPENGL,
+					OC_X86_ASM,
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				HEADER_SEARCH_PATHS = (
+					../../ogg/include,
+					../../oggz/include,
+					../../theora/include,
+					../../,
+				);
+				INFOPLIST_FILE = "theorawrapperosx/theorawrapperosx-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_MODULE_NAME = "$(PROJECT_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		37EC91AA148CEC8700C98160 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		37EC91AB148CEC8700C98160 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37EC91AD148CEC8700C98160 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				DSTROOT = /tmp/theorawrapper.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					iOS,
+					SUPPORT_OPENGL,
+				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=arm64]" = "$(inherited)";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=armv7]" = (
+					"$(inherited)",
+					OC_ARM_ASM,
+					OC_ARM_ASM_NEON,
+				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=armv7s]" = (
+					"$(inherited)",
+					OC_ARM_ASM,
+					OC_ARM_ASM_NEON,
+				);
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					../../ogg/include,
+					../../oggz/include,
+					../../theora/include,
+					../../,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 arm64";
+			};
+			name = Debug;
+		};
+		37EC91AE148CEC8700C98160 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				DSTROOT = /tmp/theorawrapper.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					iOS,
+					SUPPORT_OPENGL,
+				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=arm64]" = "$(inherited)";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=armv7s]" = (
+					"$(inherited)",
+					OC_ARM_ASM,
+					OC_ARM_ASM_NEON,
+				);
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=iphoneos*][arch=armv7]" = (
+					"$(inherited)",
+					OC_ARM_ASM,
+					OC_ARM_ASM_NEON,
+				);
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					../../ogg/include,
+					../../oggz/include,
+					../../theora/include,
+					../../,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 arm64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		378C8B3A149006A800927CFE /* Build configuration list for PBXNativeTarget "theorawrapperosx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				378C8B3B149006A800927CFE /* Debug */,
+				378C8B3C149006A800927CFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37EC9199148CEC8600C98160 /* Build configuration list for PBXProject "theorawrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37EC91AA148CEC8700C98160 /* Debug */,
+				37EC91AB148CEC8700C98160 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37EC91AC148CEC8700C98160 /* Build configuration list for PBXNativeTarget "theorawrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37EC91AD148CEC8700C98160 /* Debug */,
+				37EC91AE148CEC8700C98160 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37EC9196148CEC8600C98160 /* Project object */;
+}
