@@ -1,0 +1,36 @@
+Import('progenv')
+Import('enable_read')
+Import('enable_write')
+
+sources = []
+
+if enable_write:
+	sources = sources + [
+		'write-bad-guard.c',
+		'write-unmarked-guard.c',
+		'write-recursive.c',
+		'write-bad-bytes.c',
+		'write-bad-bos.c',
+		'write-dup-bos.c',
+		'write-bad-eos.c',
+		'write-bad-granulepos.c',
+		'write-bad-packetno.c'
+	]
+
+if enable_read and enable_write:
+	sources = sources + [
+		'read-generated.c',
+		'read-stop-ok.c',
+		'read-stop-err.c',
+		'io-read.c',
+		'io-run.c',
+		'io-seek.c',
+		'io-write.c',
+		'io-read-single.c',
+		'io-write-flush.c'
+	]
+
+tests = map (progenv.Program, sources)
+Default(tests)
+
+progenv.Test (tests)

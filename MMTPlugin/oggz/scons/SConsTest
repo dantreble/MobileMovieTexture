@@ -1,0 +1,56 @@
+import os
+
+def test_build_function (target, source, env):
+	return None 
+
+def test_emitter (target, source, env):
+	env.Append (TESTTARGETS = source)
+	return target, source
+
+test_bld = Builder(action = test_build_function, emitter = test_emitter,
+		suffix = '.test')
+
+def check_build_one (source, env):
+	ret = env.Execute (source.abspath)
+	if ret == 0:
+		print "PASS: %s" % source
+	else:
+		print "FAIL: %s" % source
+	return ret
+
+def check_pretty_print (s):
+	l = len(s)
+	print '=' * l
+	print s
+	print '=' * l
+
+def check_build_function (target, source, env):
+	nr_success = 0
+	nr_fail = 0
+	t = env.Dictionary('TESTTARGETS')
+	for s in t:
+		ret = check_build_one (s, env)
+		if ret == 0:
+			nr_success += 1
+		else:
+			nr_fail += 1
+	if nr_fail == 0:
+		check_pretty_print ("All %d tests passed" % (nr_success))
+		return 0
+	else:
+		check_pretty_print ("%d of %d tests failed" %
+			(nr_fail, nr_fail + nr_success))
+		return 1
+
+
+check_bld = Builder (action = check_build_function,
+		suffix = '.check', src_suffix = ".test")
+
+def enable_test (env):
+	env.Append(BUILDERS = {'Test' : test_bld})
+	env.Append(BUILDERS = {'Check' : check_bld})
+	check_target = env.Check ('#/scons/phony.test')
+	AlwaysBuild (check_target)
+	env.Alias ('check', check_target)
+
+Export ('enable_test')

@@ -1,0 +1,205 @@
+Oggz 1.1.0 Release
+------------------
+
+Oggz comprises liboggz and the tool oggz, which provides commands to
+inspect, edit and validate Ogg files. The oggz-chop tool can also be
+used to serve time ranges of Ogg media over HTTP by any web server that
+supports CGI.
+
+liboggz is a C library for reading and writing Ogg files and streams.
+It offers various features over the reference libogg, including
+support for seeking, validation and timestamp interpretation. Ogg is
+an interleaving data container developed by Monty at Xiph.org,
+originally to support the Ogg Vorbis audio format but now used for
+many free codecs including Dirac, FLAC, Speex and Theora.
+
+This release is available as a source tarball at:
+
+http://downloads.xiph.org/releases/liboggz/liboggz-1.1.0.tar.gz
+
+
+New in this release
+===================
+
+This release introduces a new API structure for reporting the byte
+offsets of the start and end pages for each packet.
+
+Details
+=======
+
+An Ogg packet can span multiple pages. It is often useful to know
+which page a packet started and ended on -- in particular, an
+application may want to cache the byte offset of the start of
+certain packets in order to more easily return to that position
+in the file later.
+
+As of liboggz 1.1.0, an OggzRead callback provides an oggz_packet:
+
+    /**
+     * An ogg_packet and its position in the stream.
+     */
+    typedef struct {
+      /** The ogg_packet structure, defined in <ogg/ogg.h> */
+      ogg_packet op;
+
+      /** Its position */
+      oggz_position pos;
+    } oggz_packet;
+
+Older applications will continue to work, casting this structure as
+an ogg_packet. The new structure includes additional information in
+the pos field, of type oggz_position:
+
+/**
+ * The position of an oggz_packet.
+ */
+typedef struct {
+  /**
+   * Granulepos calculated by inspection of codec data.
+   * -1 if unknown
+   */
+  ogg_int64_t calc_granulepos;
+
+  /**
+   * Byte offset of the start of the page on which this
+   * packet begins.
+   */
+  oggz_off_t begin_page_offset;
+
+  /**
+   * Byte offset of the start of the page on which this
+   * packet ends.
+   */
+  oggz_off_t end_page_offset;
+
+  /** Number of pages this packet spans. */
+  int pages;
+
+  /**
+   * Index into begin_page's lacing values
+   * for the segment that begins this packet.
+   * NB. if begin_page is continued then the first
+   * of these packets will not be reported by
+   * ogg_sync_packetout() after a seek.
+   * -1 if unknown.
+   */
+  int begin_segment_index;
+} oggz_position;
+
+
+Public API
+----------
+
+	* Added <oggz/oggz_packet.h>: add oggz_packet definition, and
+	  implement reader to return oggz_packet in OggzReadPacket callback.
+
+	* Updated shared version info to 8.0.6
+
+Internal
+--------
+
+	* Improved accuracy of byte position tracking during reading,
+	  as reported by oggz_tell()
+
+
+About Oggz
+==========
+
+oggz tool
+---------
+
+Usage: oggz <subcommand> [options] filename ...
+
+oggz is a commandline tool for manipulating Ogg files. It supports
+multiplexed files conformant with RFC3533. Oggz can parse headers for
+CELT, CMML, FLAC, Kate, PCM, Speex, Theora and Vorbis, and can read and write
+Ogg Skeleton logical bitstreams.
+
+Commands:
+  help          Display help for a specific subcommand (eg. "oggz help chop")
+
+Reporting:
+  codecs        Display the list of codecs found in one or more files and
+                their bitstreams.
+  diff          Hexdump the packets of two Ogg files and output differences.
+  dump          Hexdump packets of an Ogg file, or revert an Ogg file from
+                such a hexdump.
+  info          Display information about one or more Ogg files and their
+                bitstreams.
+  scan          Scan an Ogg file and output characteristic landmarks.
+  validate      Validate the Ogg framing of one or more files.
+
+Extraction:
+  rip           Extract one or more logical bitstreams from an Ogg file.
+
+Editing:
+  chop          Extract the part of an Ogg file between given start and/or
+                end times.
+  comment       List or edit comments in an Ogg file.
+  merge         Merge Ogg files together, interleaving pages in order of
+                presentation time.
+  sort          Sort the pages of an Ogg file in order of presentation time.
+
+Miscellaneous:
+  known-codecs  List codecs known by this version of oggz
+
+
+The script bash-completion/oggz enables completion of tool options and codec
+names when using the bash shell. Source it from your .profile, or install it
+in /etc/bash_completion.d to enable it system-wide.
+
+
+liboggz
+-------
+
+liboggz supports the flexibility afforded by the Ogg file format while
+presenting the following API niceties:
+
+        * Full API documentation
+
+        * Comprehensive test suite of read, write and seeking behavior.
+        The entire test suite can be run under valgrind if available.
+
+        * Developed and tested on GNU/Linux, Darwin/MacOSX, Win32 and
+        Symbian OS. May work on other Unix-like systems via GNU autoconf.
+        For Win32: nmake Makefiles, Visual Studio .NET 2003, 2005 and 2008
+        solution files are provided in the source distribution.
+
+        * Strict adherence to the formatting requirements of Ogg bitstreams,
+        to ensure that only valid bitstreams are generated; writes can fail
+        if you try to write illegally structured packets.
+
+        * A simple, callback based open/read/close or open/write/close
+        interface to raw Ogg files.
+
+        * Writing automatically interleaves with packet queuing, and provides
+        callback based notification when this queue is empty
+
+        * A customisable seeking abstraction for seeking on multitrack Ogg
+        data. Seeking works easily and reliably on multitrack and multi-codec
+        streams, and can transparently parse Theora, Speex, Vorbis, FLAC,
+        CMML, CELT and Ogg Skeleton headers without requiring linking to those
+        libraries. This allows efficient use on servers and other devices
+        that need to parse and seek within Ogg files, but do not need to do
+        a full media decode.
+
+Full documentation of the liboggz API, customization and installation,
+and mux and demux examples can be read online at:
+
+    http://www.xiph.org/oggz/doc/
+
+
+License
+-------
+
+Oggz is Free Software, available under a BSD style license.
+
+More information is available online at the Oggz homepage:
+
+    http://www.xiph.org/oggz/
+
+enjoy :)
+
+--
+Conrad Parker, Annodex Association
+http://www.annodex.net/

@@ -1,0 +1,106 @@
+Oggz 1.1.1 Release
+------------------
+
+Oggz comprises liboggz and the tool oggz, which provides commands to
+inspect, edit and validate Ogg files. The oggz-chop tool can also be
+used to serve time ranges of Ogg media over HTTP by any web server that
+supports CGI.
+
+liboggz is a C library for reading and writing Ogg files and streams.
+It offers various features over the reference libogg, including
+support for seeking, validation and timestamp interpretation. Ogg is
+an interleaving data container developed by Monty at Xiph.org,
+originally to support the Ogg Vorbis audio format but now used for
+many free codecs including Dirac, FLAC, Speex and Theora.
+
+This release is available as a source tarball at:
+
+http://downloads.xiph.org/releases/liboggz/liboggz-1.1.1.tar.gz
+
+
+New in this release
+===================
+
+This is a maintenance release of the current 1.1.x series, containing fixes
+for Mozilla bugs #498380, #496063, #487519, #559338 and Debian bug #557537.
+Additionally, vorbiscomment parsing was modified to tolerate comments which
+lack a value, ie. of form "KEY=" and "KEY".
+
+Details
+=======
+
+This release contains the following changes since version 1.1.0:
+
+Conrad Parker (18):
+      Mozilla 498380: free oggz->packet_buffer on close
+      Mozilla #496063: Infinite loop shutting down video during a seek operation
+      Mozilla #487519: Crash in vorbis_synthesis
+      tests: allow NULL-valued comments
+      Allow NULL-value comments, and form "KEY="
+      add TODO file with tasks and ideas for improvement.
+      update TODO: byte offsets done
+      update TODO: get_preroll() exists
+      update TODO: add -1 gp warning to oggz-validate
+      update TODO: add -1 gp warning to oggz-validate
+      TODO: move Dirac tool updates to specific tools
+      TODO: oggz-{merge,sort} accumulate continued pages
+      configure: set valgrind --num-callers to 50 (max)
+      README: project communication and git repo info
+      Mozilla #559338: auto_dirac leaks info when dirac_parse_info fails
+      Fix regression introduced in 8c2da1
+      Tolerate READ_STOP_OK for buffered packets
+      Release 1.1.1
+
+David Schleef (1):
+      Annodex is 7 bytes, not 8
+
+Pino Toscano (1):
+      Debian #557537: FTBFS on hurd-i386: wrong platform detection for version     script
+
+Viktor Gal (1):
+      Xcode project files
+
+ogg.k.ogg.k (1):
+      fix terminal header check, was off by 1
+
+ PATCHES                                |    1 +
+ README                                 |   12 +
+ TODO                                   |  175 ++++++++++
+ configure.ac                           |    4 +-
+ macosx/English.lproj/InfoPlist.strings |    2 +
+ macosx/Info.plist                      |   28 ++
+ macosx/oggz.xcodeproj/project.pbxproj  |  549 ++++++++++++++++++++++++++++++++
+ macosx/oggz_Prefix.pch                 |    7 +
+ macosx/version.plist                   |   16 +
+ src/liboggz/oggz.c                     |    2 +-
+ src/liboggz/oggz_auto.c                |    6 +-
+ src/liboggz/oggz_comments.c            |   47 ++-
+ src/liboggz/oggz_dlist.c               |   23 +-
+ src/liboggz/oggz_dlist.h               |    6 +-
+ src/liboggz/oggz_private.h             |    3 +
+ src/liboggz/oggz_read.c                |   46 +++-
+ src/liboggz/oggz_seek.c                |    2 +
+ src/tests/comment-test.c               |   21 +-
+ src/tools/oggz-validate.c              |    2 +-
+ 19 files changed, 903 insertions(+), 49 deletions(-)
+ create mode 100644 TODO
+ create mode 100644 macosx/English.lproj/InfoPlist.strings
+ create mode 100644 macosx/Info.plist
+ create mode 100644 macosx/oggz.xcodeproj/project.pbxproj
+ create mode 100644 macosx/oggz_Prefix.pch
+ create mode 100644 macosx/version.plist
+
+License
+-------
+
+Oggz is Free Software, available under a BSD style license.
+
+More information is available online at the Oggz homepage:
+
+    http://www.xiph.org/oggz/
+
+enjoy :)
+
+--
+Conrad Parker, Annodex Association
+http://www.annodex.net/

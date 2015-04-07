@@ -1,0 +1,4 @@
+SConscript(['liboggz/SConscript'])
+SConscript(['examples/SConscript'])
+SConscript(['tools/SConscript'])
+SConscript(['tests/SConscript'])

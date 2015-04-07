@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		E7C3C28910476C7600911CD9 /* debug.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27210476C7600911CD9 /* debug.h */; };
+		E7C3C28A10476C7600911CD9 /* dirac.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27310476C7600911CD9 /* dirac.c */; };
+		E7C3C28B10476C7600911CD9 /* dirac.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27410476C7600911CD9 /* dirac.h */; };
+		E7C3C28C10476C7600911CD9 /* metric_internal.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27510476C7600911CD9 /* metric_internal.c */; };
+		E7C3C28D10476C7600911CD9 /* oggz_auto.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27610476C7600911CD9 /* oggz_auto.c */; };
+		E7C3C28E10476C7600911CD9 /* oggz_auto.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27710476C7600911CD9 /* oggz_auto.h */; };
+		E7C3C28F10476C7600911CD9 /* oggz_byteorder.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27810476C7600911CD9 /* oggz_byteorder.h */; };
+		E7C3C29010476C7600911CD9 /* oggz_comments.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27910476C7600911CD9 /* oggz_comments.c */; };
+		E7C3C29110476C7600911CD9 /* oggz_compat.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27A10476C7600911CD9 /* oggz_compat.h */; };
+		E7C3C29210476C7600911CD9 /* oggz_dlist.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27B10476C7600911CD9 /* oggz_dlist.c */; };
+		E7C3C29310476C7600911CD9 /* oggz_dlist.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27C10476C7600911CD9 /* oggz_dlist.h */; };
+		E7C3C29410476C7600911CD9 /* oggz_io.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27D10476C7600911CD9 /* oggz_io.c */; };
+		E7C3C29510476C7600911CD9 /* oggz_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27E10476C7600911CD9 /* oggz_macros.h */; };
+		E7C3C29610476C7600911CD9 /* oggz_private.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27F10476C7600911CD9 /* oggz_private.h */; };
+		E7C3C29710476C7600911CD9 /* oggz_read.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28010476C7600911CD9 /* oggz_read.c */; };
+		E7C3C29810476C7600911CD9 /* oggz_seek.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28110476C7600911CD9 /* oggz_seek.c */; };
+		E7C3C29910476C7600911CD9 /* oggz_stream_private.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C28210476C7600911CD9 /* oggz_stream_private.h */; };
+		E7C3C29A10476C7600911CD9 /* oggz_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28310476C7600911CD9 /* oggz_stream.c */; };
+		E7C3C29B10476C7600911CD9 /* oggz_table.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28410476C7600911CD9 /* oggz_table.c */; };
+		E7C3C29C10476C7600911CD9 /* oggz_vector.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28510476C7600911CD9 /* oggz_vector.c */; };
+		E7C3C29D10476C7600911CD9 /* oggz_vector.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C28610476C7600911CD9 /* oggz_vector.h */; };
+		E7C3C29E10476C7600911CD9 /* oggz_write.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28710476C7600911CD9 /* oggz_write.c */; };
+		E7C3C29F10476C7600911CD9 /* oggz.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28810476C7600911CD9 /* oggz.c */; };
+		E7C3C2AC10476CD800911CD9 /* dirac.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27310476C7600911CD9 /* dirac.c */; };
+		E7C3C2AD10476CD800911CD9 /* metric_internal.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27510476C7600911CD9 /* metric_internal.c */; };
+		E7C3C2AE10476CD800911CD9 /* oggz.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28810476C7600911CD9 /* oggz.c */; };
+		E7C3C2AF10476CD800911CD9 /* oggz_auto.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27610476C7600911CD9 /* oggz_auto.c */; };
+		E7C3C2B010476CD800911CD9 /* oggz_comments.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27910476C7600911CD9 /* oggz_comments.c */; };
+		E7C3C2B110476CD800911CD9 /* oggz_dlist.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27B10476C7600911CD9 /* oggz_dlist.c */; };
+		E7C3C2B210476CD800911CD9 /* oggz_io.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C27D10476C7600911CD9 /* oggz_io.c */; };
+		E7C3C2B310476CD800911CD9 /* oggz_read.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28010476C7600911CD9 /* oggz_read.c */; };
+		E7C3C2B410476CD800911CD9 /* oggz_seek.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28110476C7600911CD9 /* oggz_seek.c */; };
+		E7C3C2B510476CD800911CD9 /* oggz_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28310476C7600911CD9 /* oggz_stream.c */; };
+		E7C3C2B610476CD800911CD9 /* oggz_table.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28410476C7600911CD9 /* oggz_table.c */; };
+		E7C3C2B710476CD800911CD9 /* oggz_vector.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28510476C7600911CD9 /* oggz_vector.c */; };
+		E7C3C2B810476CD800911CD9 /* oggz_write.c in Sources */ = {isa = PBXBuildFile; fileRef = E7C3C28710476C7600911CD9 /* oggz_write.c */; };
+		E7C3C2D310476DA500911CD9 /* Ogg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C3C2D210476DA500911CD9 /* Ogg.framework */; };
+		E7C7B0E31048357F009943E2 /* oggz_stream_private.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C28210476C7600911CD9 /* oggz_stream_private.h */; };
+		E7C7B0E410483591009943E2 /* oggz_auto.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27710476C7600911CD9 /* oggz_auto.h */; };
+		E7C7B0E510483591009943E2 /* oggz_byteorder.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27810476C7600911CD9 /* oggz_byteorder.h */; };
+		E7C7B0E61048359C009943E2 /* debug.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27210476C7600911CD9 /* debug.h */; };
+		E7C7B0E71048359C009943E2 /* dirac.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27410476C7600911CD9 /* dirac.h */; };
+		E7C7B0E8104835A2009943E2 /* oggz_compat.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27A10476C7600911CD9 /* oggz_compat.h */; };
+		E7C7B0E9104835BB009943E2 /* oggz_dlist.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27C10476C7600911CD9 /* oggz_dlist.h */; };
+		E7C7B0EA104835BB009943E2 /* oggz_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27E10476C7600911CD9 /* oggz_macros.h */; };
+		E7C7B0EB104835BB009943E2 /* oggz_private.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C27F10476C7600911CD9 /* oggz_private.h */; };
+		E7C7B0F0104835CE009943E2 /* oggz_vector.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C3C28610476C7600911CD9 /* oggz_vector.h */; };
+		E7E5FBB3104760F2000946CC /* oggz_comments.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBA6104760F1000946CC /* oggz_comments.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBB4104760F2000946CC /* oggz_constants.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBA7104760F1000946CC /* oggz_constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBB5104760F2000946CC /* oggz_deprecated.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBA8104760F1000946CC /* oggz_deprecated.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBB6104760F2000946CC /* oggz_io.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBA9104760F1000946CC /* oggz_io.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBB7104760F2000946CC /* oggz_off_t_generated.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBAA104760F1000946CC /* oggz_off_t_generated.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBB9104760F2000946CC /* oggz_off_t.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBAC104760F2000946CC /* oggz_off_t.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBBA104760F2000946CC /* oggz_read.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBAD104760F2000946CC /* oggz_read.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBBB104760F2000946CC /* oggz_seek.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBAE104760F2000946CC /* oggz_seek.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBBC104760F2000946CC /* oggz_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBAF104760F2000946CC /* oggz_stream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBBD104760F2000946CC /* oggz_table.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBB0104760F2000946CC /* oggz_table.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBBE104760F2000946CC /* oggz_write.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBB1104760F2000946CC /* oggz_write.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E5FBBF104760F2000946CC /* oggz.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E5FBB2104760F2000946CC /* oggz.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		32DBCF5E0370ADEE00C91783 /* oggz_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oggz_Prefix.pch; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* oggz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = oggz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7C3C27210476C7600911CD9 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = debug.h; path = ../src/liboggz/debug.h; sourceTree = SOURCE_ROOT; };
+		E7C3C27310476C7600911CD9 /* dirac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dirac.c; path = ../src/liboggz/dirac.c; sourceTree = SOURCE_ROOT; };
+		E7C3C27410476C7600911CD9 /* dirac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dirac.h; path = ../src/liboggz/dirac.h; sourceTree = SOURCE_ROOT; };
+		E7C3C27510476C7600911CD9 /* metric_internal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = metric_internal.c; path = ../src/liboggz/metric_internal.c; sourceTree = SOURCE_ROOT; };
+		E7C3C27610476C7600911CD9 /* oggz_auto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_auto.c; path = ../src/liboggz/oggz_auto.c; sourceTree = SOURCE_ROOT; };
+		E7C3C27710476C7600911CD9 /* oggz_auto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_auto.h; path = ../src/liboggz/oggz_auto.h; sourceTree = SOURCE_ROOT; };
+		E7C3C27810476C7600911CD9 /* oggz_byteorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_byteorder.h; path = ../src/liboggz/oggz_byteorder.h; sourceTree = SOURCE_ROOT; };
+		E7C3C27910476C7600911CD9 /* oggz_comments.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_comments.c; path = ../src/liboggz/oggz_comments.c; sourceTree = SOURCE_ROOT; };
+		E7C3C27A10476C7600911CD9 /* oggz_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_compat.h; path = ../src/liboggz/oggz_compat.h; sourceTree = SOURCE_ROOT; };
+		E7C3C27B10476C7600911CD9 /* oggz_dlist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_dlist.c; path = ../src/liboggz/oggz_dlist.c; sourceTree = SOURCE_ROOT; };
+		E7C3C27C10476C7600911CD9 /* oggz_dlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_dlist.h; path = ../src/liboggz/oggz_dlist.h; sourceTree = SOURCE_ROOT; };
+		E7C3C27D10476C7600911CD9 /* oggz_io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_io.c; path = ../src/liboggz/oggz_io.c; sourceTree = SOURCE_ROOT; };
+		E7C3C27E10476C7600911CD9 /* oggz_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_macros.h; path = ../src/liboggz/oggz_macros.h; sourceTree = SOURCE_ROOT; };
+		E7C3C27F10476C7600911CD9 /* oggz_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_private.h; path = ../src/liboggz/oggz_private.h; sourceTree = SOURCE_ROOT; };
+		E7C3C28010476C7600911CD9 /* oggz_read.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_read.c; path = ../src/liboggz/oggz_read.c; sourceTree = SOURCE_ROOT; };
+		E7C3C28110476C7600911CD9 /* oggz_seek.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_seek.c; path = ../src/liboggz/oggz_seek.c; sourceTree = SOURCE_ROOT; };
+		E7C3C28210476C7600911CD9 /* oggz_stream_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_stream_private.h; path = ../src/liboggz/oggz_stream_private.h; sourceTree = SOURCE_ROOT; };
+		E7C3C28310476C7600911CD9 /* oggz_stream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_stream.c; path = ../src/liboggz/oggz_stream.c; sourceTree = SOURCE_ROOT; };
+		E7C3C28410476C7600911CD9 /* oggz_table.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_table.c; path = ../src/liboggz/oggz_table.c; sourceTree = SOURCE_ROOT; };
+		E7C3C28510476C7600911CD9 /* oggz_vector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_vector.c; path = ../src/liboggz/oggz_vector.c; sourceTree = SOURCE_ROOT; };
+		E7C3C28610476C7600911CD9 /* oggz_vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_vector.h; path = ../src/liboggz/oggz_vector.h; sourceTree = SOURCE_ROOT; };
+		E7C3C28710476C7600911CD9 /* oggz_write.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz_write.c; path = ../src/liboggz/oggz_write.c; sourceTree = SOURCE_ROOT; };
+		E7C3C28810476C7600911CD9 /* oggz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = oggz.c; path = ../src/liboggz/oggz.c; sourceTree = SOURCE_ROOT; };
+		E7C3C2A810476CC400911CD9 /* liboggz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liboggz.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7C3C2D210476DA500911CD9 /* Ogg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ogg.framework; path = /Library/Frameworks/Ogg.framework; sourceTree = "<absolute>"; };
+		E7E5FBA6104760F1000946CC /* oggz_comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_comments.h; path = ../include/oggz/oggz_comments.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBA7104760F1000946CC /* oggz_constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_constants.h; path = ../include/oggz/oggz_constants.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBA8104760F1000946CC /* oggz_deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_deprecated.h; path = ../include/oggz/oggz_deprecated.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBA9104760F1000946CC /* oggz_io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_io.h; path = ../include/oggz/oggz_io.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBAA104760F1000946CC /* oggz_off_t_generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_off_t_generated.h; path = ../include/oggz/oggz_off_t_generated.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBAC104760F2000946CC /* oggz_off_t.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_off_t.h; path = ../include/oggz/oggz_off_t.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBAD104760F2000946CC /* oggz_read.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_read.h; path = ../include/oggz/oggz_read.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBAE104760F2000946CC /* oggz_seek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_seek.h; path = ../include/oggz/oggz_seek.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBAF104760F2000946CC /* oggz_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_stream.h; path = ../include/oggz/oggz_stream.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBB0104760F2000946CC /* oggz_table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_table.h; path = ../include/oggz/oggz_table.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBB1104760F2000946CC /* oggz_write.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz_write.h; path = ../include/oggz/oggz_write.h; sourceTree = SOURCE_ROOT; };
+		E7E5FBB2104760F2000946CC /* oggz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = oggz.h; path = ../include/oggz/oggz.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DC2EF560486A6940098B216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7C3C2D310476DA500911CD9 /* Ogg.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7C3C2A610476CC400911CD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5B0486A6940098B216 /* oggz.framework */,
+				E7C3C2A810476CC400911CD9 /* liboggz.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* oggz */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* Headers */,
+				E7E5FBC110476108000946CC /* Source */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = oggz;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				E7C3C2D210476DA500911CD9 /* Ogg.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				E7E5FBA6104760F1000946CC /* oggz_comments.h */,
+				E7E5FBA7104760F1000946CC /* oggz_constants.h */,
+				E7E5FBA8104760F1000946CC /* oggz_deprecated.h */,
+				E7E5FBA9104760F1000946CC /* oggz_io.h */,
+				E7E5FBAA104760F1000946CC /* oggz_off_t_generated.h */,
+				E7E5FBAC104760F2000946CC /* oggz_off_t.h */,
+				E7E5FBAD104760F2000946CC /* oggz_read.h */,
+				E7E5FBAE104760F2000946CC /* oggz_seek.h */,
+				E7E5FBAF104760F2000946CC /* oggz_stream.h */,
+				E7E5FBB0104760F2000946CC /* oggz_table.h */,
+				E7E5FBB1104760F2000946CC /* oggz_write.h */,
+				E7E5FBB2104760F2000946CC /* oggz.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF5E0370ADEE00C91783 /* oggz_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		E7E5FBC110476108000946CC /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E7C3C27210476C7600911CD9 /* debug.h */,
+				E7C3C27310476C7600911CD9 /* dirac.c */,
+				E7C3C27410476C7600911CD9 /* dirac.h */,
+				E7C3C27510476C7600911CD9 /* metric_internal.c */,
+				E7C3C27610476C7600911CD9 /* oggz_auto.c */,
+				E7C3C27710476C7600911CD9 /* oggz_auto.h */,
+				E7C3C27810476C7600911CD9 /* oggz_byteorder.h */,
+				E7C3C27910476C7600911CD9 /* oggz_comments.c */,
+				E7C3C27A10476C7600911CD9 /* oggz_compat.h */,
+				E7C3C27B10476C7600911CD9 /* oggz_dlist.c */,
+				E7C3C27C10476C7600911CD9 /* oggz_dlist.h */,
+				E7C3C27D10476C7600911CD9 /* oggz_io.c */,
+				E7C3C27E10476C7600911CD9 /* oggz_macros.h */,
+				E7C3C27F10476C7600911CD9 /* oggz_private.h */,
+				E7C3C28010476C7600911CD9 /* oggz_read.c */,
+				E7C3C28110476C7600911CD9 /* oggz_seek.c */,
+				E7C3C28210476C7600911CD9 /* oggz_stream_private.h */,
+				E7C3C28310476C7600911CD9 /* oggz_stream.c */,
+				E7C3C28410476C7600911CD9 /* oggz_table.c */,
+				E7C3C28510476C7600911CD9 /* oggz_vector.c */,
+				E7C3C28610476C7600911CD9 /* oggz_vector.h */,
+				E7C3C28710476C7600911CD9 /* oggz_write.c */,
+				E7C3C28810476C7600911CD9 /* oggz.c */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7E5FBB3104760F2000946CC /* oggz_comments.h in Headers */,
+				E7E5FBB4104760F2000946CC /* oggz_constants.h in Headers */,
+				E7E5FBB5104760F2000946CC /* oggz_deprecated.h in Headers */,
+				E7E5FBB6104760F2000946CC /* oggz_io.h in Headers */,
+				E7E5FBB7104760F2000946CC /* oggz_off_t_generated.h in Headers */,
+				E7E5FBB9104760F2000946CC /* oggz_off_t.h in Headers */,
+				E7E5FBBA104760F2000946CC /* oggz_read.h in Headers */,
+				E7E5FBBB104760F2000946CC /* oggz_seek.h in Headers */,
+				E7E5FBBC104760F2000946CC /* oggz_stream.h in Headers */,
+				E7E5FBBD104760F2000946CC /* oggz_table.h in Headers */,
+				E7E5FBBE104760F2000946CC /* oggz_write.h in Headers */,
+				E7E5FBBF104760F2000946CC /* oggz.h in Headers */,
+				E7C3C28910476C7600911CD9 /* debug.h in Headers */,
+				E7C3C28B10476C7600911CD9 /* dirac.h in Headers */,
+				E7C3C28E10476C7600911CD9 /* oggz_auto.h in Headers */,
+				E7C3C28F10476C7600911CD9 /* oggz_byteorder.h in Headers */,
+				E7C3C29110476C7600911CD9 /* oggz_compat.h in Headers */,
+				E7C3C29310476C7600911CD9 /* oggz_dlist.h in Headers */,
+				E7C3C29510476C7600911CD9 /* oggz_macros.h in Headers */,
+				E7C3C29610476C7600911CD9 /* oggz_private.h in Headers */,
+				E7C3C29910476C7600911CD9 /* oggz_stream_private.h in Headers */,
+				E7C3C29D10476C7600911CD9 /* oggz_vector.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7C3C2A410476CC400911CD9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7C7B0E61048359C009943E2 /* debug.h in Headers */,
+				E7C7B0E71048359C009943E2 /* dirac.h in Headers */,
+				E7C7B0E9104835BB009943E2 /* oggz_dlist.h in Headers */,
+				E7C7B0EA104835BB009943E2 /* oggz_macros.h in Headers */,
+				E7C7B0EB104835BB009943E2 /* oggz_private.h in Headers */,
+				E7C7B0E8104835A2009943E2 /* oggz_compat.h in Headers */,
+				E7C7B0E410483591009943E2 /* oggz_auto.h in Headers */,
+				E7C7B0F0104835CE009943E2 /* oggz_vector.h in Headers */,
+				E7C7B0E510483591009943E2 /* oggz_byteorder.h in Headers */,
+				E7C7B0E31048357F009943E2 /* oggz_stream_private.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8DC2EF4F0486A6940098B216 /* Oggz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "Oggz" */;
+			buildPhases = (
+				8DC2EF500486A6940098B216 /* Headers */,
+				8DC2EF520486A6940098B216 /* Resources */,
+				8DC2EF540486A6940098B216 /* Sources */,
+				8DC2EF560486A6940098B216 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Oggz;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = oggz;
+			productReference = 8DC2EF5B0486A6940098B216 /* oggz.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E7C3C2A710476CC400911CD9 /* oggz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7C3C2BB10476CFF00911CD9 /* Build configuration list for PBXNativeTarget "oggz" */;
+			buildPhases = (
+				E7C3C2A410476CC400911CD9 /* Headers */,
+				E7C3C2A510476CC400911CD9 /* Sources */,
+				E7C3C2A610476CC400911CD9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = oggz;
+			productName = oggz;
+			productReference = E7C3C2A810476CC400911CD9 /* liboggz.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "oggz" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* oggz */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DC2EF4F0486A6940098B216 /* Oggz */,
+				E7C3C2A710476CC400911CD9 /* oggz */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DC2EF520486A6940098B216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7C3C28A10476C7600911CD9 /* dirac.c in Sources */,
+				E7C3C28C10476C7600911CD9 /* metric_internal.c in Sources */,
+				E7C3C28D10476C7600911CD9 /* oggz_auto.c in Sources */,
+				E7C3C29010476C7600911CD9 /* oggz_comments.c in Sources */,
+				E7C3C29210476C7600911CD9 /* oggz_dlist.c in Sources */,
+				E7C3C29410476C7600911CD9 /* oggz_io.c in Sources */,
+				E7C3C29710476C7600911CD9 /* oggz_read.c in Sources */,
+				E7C3C29810476C7600911CD9 /* oggz_seek.c in Sources */,
+				E7C3C29A10476C7600911CD9 /* oggz_stream.c in Sources */,
+				E7C3C29B10476C7600911CD9 /* oggz_table.c in Sources */,
+				E7C3C29C10476C7600911CD9 /* oggz_vector.c in Sources */,
+				E7C3C29E10476C7600911CD9 /* oggz_write.c in Sources */,
+				E7C3C29F10476C7600911CD9 /* oggz.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7C3C2A510476CC400911CD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7C3C2AC10476CD800911CD9 /* dirac.c in Sources */,
+				E7C3C2AD10476CD800911CD9 /* metric_internal.c in Sources */,
+				E7C3C2AE10476CD800911CD9 /* oggz.c in Sources */,
+				E7C3C2AF10476CD800911CD9 /* oggz_auto.c in Sources */,
+				E7C3C2B010476CD800911CD9 /* oggz_comments.c in Sources */,
+				E7C3C2B110476CD800911CD9 /* oggz_dlist.c in Sources */,
+				E7C3C2B210476CD800911CD9 /* oggz_io.c in Sources */,
+				E7C3C2B310476CD800911CD9 /* oggz_read.c in Sources */,
+				E7C3C2B410476CD800911CD9 /* oggz_seek.c in Sources */,
+				E7C3C2B510476CD800911CD9 /* oggz_stream.c in Sources */,
+				E7C3C2B610476CD800911CD9 /* oggz_table.c in Sources */,
+				E7C3C2B710476CD800911CD9 /* oggz_vector.c in Sources */,
+				E7C3C2B810476CD800911CD9 /* oggz_write.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB91AE08733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = oggz_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				PRODUCT_NAME = oggz;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		1DEB91AF08733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = oggz_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				PRODUCT_NAME = oggz;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		1DEB91B208733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_STDINT_H,
+					OGGZ_CONFIG_READ,
+					OGGZ_CONFIG_WRITE,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB91B308733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_STDINT_H,
+					OGGZ_CONFIG_READ,
+					OGGZ_CONFIG_WRITE,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		E7C3C2A910476CC400911CD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					../../libogg/include,
+					../include,
+				);
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = oggz;
+				SDKROOT = iphonesimulator3.0;
+			};
+			name = Debug;
+		};
+		E7C3C2AA10476CC400911CD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = ../include;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = oggz;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "Oggz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91AE08733DA50010E9CD /* Debug */,
+				1DEB91AF08733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "oggz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91B208733DA50010E9CD /* Debug */,
+				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7C3C2BB10476CFF00911CD9 /* Build configuration list for PBXNativeTarget "oggz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7C3C2A910476CC400911CD9 /* Debug */,
+				E7C3C2AA10476CC400911CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

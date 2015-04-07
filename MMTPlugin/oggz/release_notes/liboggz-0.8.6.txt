@@ -1,0 +1,99 @@
+Oggz 0.8.6 Release
+------------------
+
+liboggz is a C library providing a simple programming interface for reading
+and writing Ogg files and streams. Ogg is an interleaving data container
+developed by Monty at Xiph.Org, originally to support the Ogg Vorbis audio
+format.
+
+This release is available as a source tarball at:
+
+http://www.annodex.net/software/liboggz/download/liboggz-0.8.6.tar.gz
+
+New in this release:
+
+	* new oggzrip tool, for ripping individual tracks from Ogg files;
+	by David Kuehling
+	* added inbuilt parsing of FLAC headers for seeking hints, by
+	Tobias Gehrig. This allows Ogg FLAC files to be used with oggzmerge
+	and similar tools.
+	* fixed oggzmerge binary open bug on Win32 (Colin Ward)
+	* updated Win32 project by Orum
+	* added inbuilt parsing of Ogg Skeleton and CMML binary headers
+	* simplified documentation related to seeking
+	* added oggz_{get,set}_{granulerate,granuleshift}() query functions
+
+About Oggz
+----------
+
+Oggz comprises liboggz and the command-line tools oggzdump, oggzdiff,
+oggzmerge and oggzrip.
+
+liboggz supports the flexibility afforded by the Ogg file format while
+presenting the following API niceties:
+
+	* Full API documentation.
+
+	* Comprehensive test suite of read, write and seeking behavior.
+
+	* Developed and tested on GNU/Linux, Darwin/MacOSX, Win32 and
+	Symbian OS. May work on other Unix-like systems via GNU autoconf.
+	For Win32: nmake Makefiles, Visual Studio .NET 2003 solution files
+	and Visual C++ 6.0 workspace files are provided in the source
+	distribution.
+
+	* Strict adherence to the formatting requirements of Ogg bitstreams,
+	to ensure that only valid bitstreams are generated; writes can fail
+	if you try to write illegally structured packets.
+
+	* A simple, callback based open/read/close or open/write/close
+	interface to raw Ogg files.
+
+	* Writing automatically interleaves with packet queuing, and provides	
+	callback based notification when this queue is empty
+
+	* A customisable seeking abstraction for seeking on multitrack Ogg
+	data. Seeking works easily and reliably on multitrack and multi-codec
+	streams, and can transparently parse Theora, Speex, Vorbis, FLAC and
+	CMML headers  without requiring linking to those libraries. This
+	allows efficient use on servers and other devices that need to parse
+	and seek within Ogg files, but do not need to do a full media decode.
+
+Full documentation of the liboggz API, customization and installation,
+and mux and demux examples can be read online at:
+
+    http://www.annodex.net/software/liboggz/html/
+
+Tools
+-----
+
+The Oggz source tarball also contains the following command-line tools,
+which are useful for debugging and testing Ogg bitstreams:
+
+	* oggzdump: Hexdump packets of an Ogg file, or revert an Ogg file
+	from such a hexdump.
+
+	* oggzdiff: Hexdump the packets of two Ogg files and output
+	differences Oggz is Free Software, available under a BSD-style
+	license.
+
+	* oggzmerge: Merge Ogg files together, interleaving pages in order
+	of presentation time.
+
+	* oggzrip: Extract one or more logical bitstreams from an Ogg file.
+
+License
+-------
+
+Oggz is Free Software, available under a BSD style license.
+
+More information is available online at the Oggz homepage:
+
+    http://www.annodex.net/software/liboggz/
+
+enjoy :)
+
+--
+Conrad Parker
+Senior Software Engineer, Continuous Media Web, CSIRO Australia
+http://www.annodex.net/   http://www.ict.csiro.au/cmweb/

@@ -1,0 +1,206 @@
+Oggz 1.0.0 Release
+------------------
+
+Oggz comprises liboggz and the tool oggz, which provides commands to
+inspect, edit and validate Ogg files. The oggz-chop tool can also be
+used to serve time ranges of Ogg media over HTTP by any web server that
+supports CGI.
+
+liboggz is a C library for reading and writing Ogg files and streams.
+It offers various features over the reference libogg, including
+support for seeking, validation and timestamp interpretation. Ogg is
+an interleaving data container developed by Monty at Xiph.org,
+originally to support the Ogg Vorbis audio format but now used for
+many free codecs including Dirac, FLAC, Speex and Theora.
+
+This release is available as a source tarball at:
+
+http://downloads.xiph.org/releases/liboggz/liboggz-1.0.0.tar.gz
+
+
+New in this release
+===================
+
+This is a stable maintenance release including the result of many months of
+security review and bug fixes included in the Mozilla Firefox 3.5 release.
+It is API and ABI backwards-compatible with all liboggz releases since 0.8.0
+(released Dec 18 2003).
+
+It includes build fixes and updates for embedded platforms including ARM
+and SH4, and updated Visual Studio project files for Microsoft Windows
+native builds. The default build environment uses GCC with GNU autotools.
+
+This release includes a new "oggz codecs" command, which simply lists the
+codecs present in one or more files. The default comma-separated output
+is designed for use in an HTML5 <video> codecs attribute.
+
+
+Details
+=======
+
+Build
+-----
+
+	* Updated Visual Studio project files (Barry Duncan)
+	* configure.ac: fix for arm, sh4 builds
+	* remove DocBook .sgml files, use .1 directly
+	* Debian #540360: use version script on GNU/kFreeBSD
+
+oggz tools
+----------
+
+	* oggz-chop: fix detection of accumulated continued pages, ie. when
+          all accumulated pages have granulepos -1 and thus should all be
+          kept when advancing the accumulator
+	* oggz-chop: add a page accumulator for plain pages. Accumulate pages
+          even for start=0, or tracks with no granuleshift, for cases where
+          continued pages occur at the chop time.
+
+	* oggz-codecs: New tool
+
+	* oggz-comment: Handle duplicate comments, with unit test
+
+Documentation
+-------------
+
+	* add oggz.1 man page
+	* add examples to chop, comment, dump, info, merge, rip and sort
+	  man pages
+	* update ChangeLog with info from all release_notes
+	* Add PATCHES file, update README
+
+Public API
+----------
+
+	* Add ability to limit seeks to only search inside a specified byte
+	  range. Adds oggz_bounded_seek_set() public API call.
+
+	* Updated shared version info to 7:0:6
+
+Internal
+--------
+
+	* Handle Theora version > 3.2.0 initial granulepos 1|0
+
+	* Fix data alignment on ARM (Erik de Castro Lopo, Chris Double,
+	  Vladimir Vukicevic)
+
+	* Fix for inefficient oggz_seek_units() (Sean Young)
+
+	* oggz_read: always set the internal offset to the start of the
+	  current page. This is returned by oggz_tell() and can be queried
+	  within a ReadPage callback.
+	* oggz_read: Fix packetno check for holes in headers. The packetno
+	  has not yet been incremented, so the value to check is off-by-one.
+
+	* Annodex #1581: avoid _oggz_comment_add_byname() strcmp of NULL
+	  (keelerda)
+	* Mozilla #499604, Annodex #486: avoid uninitialized variable in
+	  oggz_seek_end()
+	* Mozilla #506870: fix leaks in oggz-comments.c
+	* Mozilla #506878: check oggz_stream_get_content() return values
+	* Mozilla #515376: Check index in dirac_parse_info()
+
+
+About Oggz
+==========
+
+oggz tool
+---------
+
+Usage: oggz <subcommand> [options] filename ...
+
+oggz is a commandline tool for manipulating Ogg files. It supports
+multiplexed files conformant with RFC3533. Oggz can parse headers for
+CELT, CMML, FLAC, Kate, PCM, Speex, Theora and Vorbis, and can read and write
+Ogg Skeleton logical bitstreams.
+
+Commands:
+  help          Display help for a specific subcommand (eg. "oggz help chop")
+
+Reporting:
+  codecs        Display the list of codecs found in one or more files and
+                their bitstreams.
+  diff          Hexdump the packets of two Ogg files and output differences.
+  dump          Hexdump packets of an Ogg file, or revert an Ogg file from
+                such a hexdump.
+  info          Display information about one or more Ogg files and their
+                bitstreams.
+  scan          Scan an Ogg file and output characteristic landmarks.
+  validate      Validate the Ogg framing of one or more files.
+
+Extraction:
+  rip           Extract one or more logical bitstreams from an Ogg file.
+
+Editing:
+  chop          Extract the part of an Ogg file between given start and/or
+                end times.
+  comment       List or edit comments in an Ogg file.
+  merge         Merge Ogg files together, interleaving pages in order of
+                presentation time.
+  sort          Sort the pages of an Ogg file in order of presentation time.
+
+Miscellaneous:
+  known-codecs  List codecs known by this version of oggz
+
+
+The script bash-completion/oggz enables completion of tool options and codec
+names when using the bash shell. Source it from your .profile, or install it
+in /etc/bash_completion.d to enable it system-wide.
+
+
+liboggz
+-------
+
+liboggz supports the flexibility afforded by the Ogg file format while
+presenting the following API niceties:
+
+        * Full API documentation
+
+        * Comprehensive test suite of read, write and seeking behavior.
+        The entire test suite can be run under valgrind if available.
+
+        * Developed and tested on GNU/Linux, Darwin/MacOSX, Win32 and
+        Symbian OS. May work on other Unix-like systems via GNU autoconf.
+        For Win32: nmake Makefiles, Visual Studio .NET 2003 solution files
+        and Visual C++ 6.0 workspace files are provided in the source
+        distribution.
+
+        * Strict adherence to the formatting requirements of Ogg bitstreams,
+        to ensure that only valid bitstreams are generated; writes can fail
+        if you try to write illegally structured packets.
+
+        * A simple, callback based open/read/close or open/write/close
+        interface to raw Ogg files.
+
+        * Writing automatically interleaves with packet queuing, and provides
+        callback based notification when this queue is empty
+
+        * A customisable seeking abstraction for seeking on multitrack Ogg
+        data. Seeking works easily and reliably on multitrack and multi-codec
+        streams, and can transparently parse Theora, Speex, Vorbis, FLAC,
+        CMML, CELT and Ogg Skeleton headers without requiring linking to those
+        libraries. This allows efficient use on servers and other devices
+        that need to parse and seek within Ogg files, but do not need to do
+        a full media decode.
+
+Full documentation of the liboggz API, customization and installation,
+and mux and demux examples can be read online at:
+
+    http://www.xiph.org/oggz/doc/
+
+
+License
+-------
+
+Oggz is Free Software, available under a BSD style license.
+
+More information is available online at the Oggz homepage:
+
+    http://www.xiph.org/oggz/
+
+enjoy :)
+
+--
+Conrad Parker, Annodex Association
+http://www.annodex.net/

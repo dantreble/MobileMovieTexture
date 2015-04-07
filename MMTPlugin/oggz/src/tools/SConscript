@@ -1,0 +1,14 @@
+Import('progenv')
+Import('enable_read')
+Import('enable_write')
+
+sources = []
+
+if enable_read:
+	sources += ['oggzinfo.c', 'oggzed.c', 'oggzdump.c']
+
+if enable_read and enable_write:
+	sources += ['oggzmerge.c', 'oggzrip.c']
+
+tools = map (progenv.Program, sources)
+Default(tools)

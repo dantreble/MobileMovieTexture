@@ -1,0 +1,210 @@
+Oggz 0.9.1 Release
+------------------
+
+Oggz comprises liboggz and the command-line tools oggzinfo, oggzdump,
+oggzdiff, oggzmerge, oggzrip and oggz-validate.
+
+liboggz is a C library providing a simple programming interface for reading
+and writing Ogg files and streams. Ogg is an interleaving data container
+developed by Monty at Xiph.Org, originally to support the Ogg Vorbis audio
+format.
+
+This release is available as a source tarball at:
+
+http://www.annodex.net/software/liboggz/download/liboggz-0.9.1.tar.gz
+
+New in this release:
+
+        * Added new oggzinfo tool
+        -------------------------
+
+        oggzinfo displays information about the contents of Ogg files.
+        By default it displays basic information such as audio samplerate
+        and video dimensions:
+
+          - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+          $ oggzinfo 2004-12-04-cc-theora.ogg
+          Content-Duration: 00:01:54.748
+
+          Theora: serialno 1648191042
+                  3442 packets in 251 pages, 13.7 packets/page
+                  Video-Framerate: 29.970 fps
+                  Video-Width: 160
+                  Video-Height: 128
+
+          Vorbis: serialno 0317964026
+                  4935 packets in 138 pages, 35.8 packets/page
+                  Audio-Samplerate: 22000 Hz
+                  Audio-Channels: 2
+          - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+        oggzinfo also has options to display the following information for
+        the entire file, and also for each logical bitstream:
+
+            - length in bytes, kB, MB, GB
+            - average bitrate in bps, kbps, Mbps, Gbps
+            - statistics on page lengths (maximum and standard deviation)
+            - statistics on packet lengths (maximum and standard deviation)
+
+        The man page for oggzinfo(1) can be read online at:
+
+          http://www.annodex.net/cgi-bin/man/man2html?query=oggzinfo
+
+
+        * Added new oggz-validate tool
+        ------------------------------
+
+        oggz-validate checks the ordering of packets within an Ogg file, and
+        also checks that it complies with the Ogg bitstream mapping
+        restrictions.
+
+        The man page for oggz-validate(1) can be read online at:
+
+          http://www.annodex.net/cgi-bin/man/man2html?query=oggz-validate
+
+
+	* improved oggzdump tool
+        ------------------------
+
+        oggzdump now displays packet lengths (in bytes, kB, MB, GB ;-)
+        and timestamps (rather than just byte offsets). It now interprets
+        theora granulepos as a split of keyframe|pframe:
+
+          - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+00:00:07.733: serialno 0539503247, granulepos 89|27, packetno 119: 277 bytes
+    0000: 506c a908 120e 3d0b 88d7 73e9 7227 227c  Pl....= ..s.r'"|
+    0010: 9f40 7463 f789 87c1 8b79 043b 183c 946f  .@tc.....y.;.<.o
+    0020: d1e3 3e47 0798 9fcd 61a9 f113 e261 d1ec  ..>G....a....a..
+    ...
+          - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+        oggzdump now also has a --content-type (or -c) option for
+        specifying the name of a particular bitstream to dump:
+
+            oggzdump --content-type theora file.ogg
+
+        will dump only the packets in the theora logical bitstream.
+
+        The man page for oggzdump(1) can be read online at:
+
+          http://www.annodex.net/cgi-bin/man/man2html?query=oggzdump
+
+
+        * bugfix in oggzdiff tool
+        -------------------------
+
+        r1176: fix some typos in oggzdiff which prevented multiple hide
+        options from being specified
+
+        The man page for oggzdiff(1) can be read online at:
+
+          http://www.annodex.net/cgi-bin/man/man2html?query=oggzdiff
+
+
+        * liboggz: bugfix in raw seeking
+        --------------------------------
+
+        liboggz provides seeking by time or byte offsets in multitrack Ogg
+        files. It automatically handles time offsets for files containing
+        Theora, Speex, Vorbis, FLAC and CMML.
+
+        r1092: fix a bug in raw seeking, where doing a raw seek by bytes
+        and back again by time (to the original time point) hadn't
+        invalidated the cached time offset, hence the second seek was
+        considered unnecessary and skipped.  This change correctly
+        invalidates the cached time offset when doing a raw byte seek.
+
+
+        * unnecessary optimisations in oggzrip tool
+        -------------------------------------------
+
+        Optimised packet filtering: filtering decisions are now made at the
+        start of each logical bitstream, not at every packet. Additionally,
+        the hardcoded limit of extracting no more than 64 logical bitstreams
+        from the input file was removed.
+        
+        The man page for oggzrip(1) can be read online at:
+
+          http://www.annodex.net/cgi-bin/man/man2html?query=oggzrip
+
+        
+About Oggz
+----------
+
+Oggz comprises liboggz and the command-line tools oggzinfo, oggzdump,
+oggzdiff, oggzmerge, oggzrip and oggz-validate.
+
+liboggz supports the flexibility afforded by the Ogg file format while
+presenting the following API niceties:
+
+	* Full API documentation
+
+	* Comprehensive test suite of read, write and seeking behavior.
+        The entire test suite can be run under valgrind if available.
+
+	* Developed and tested on GNU/Linux, Darwin/MacOSX, Win32 and
+	Symbian OS. May work on other Unix-like systems via GNU autoconf.
+	For Win32: nmake Makefiles, Visual Studio .NET 2003 solution files
+	and Visual C++ 6.0 workspace files are provided in the source
+	distribution.
+
+	* Strict adherence to the formatting requirements of Ogg bitstreams,
+	to ensure that only valid bitstreams are generated; writes can fail
+	if you try to write illegally structured packets.
+
+	* A simple, callback based open/read/close or open/write/close
+	interface to raw Ogg files.
+
+	* Writing automatically interleaves with packet queuing, and provides	
+	callback based notification when this queue is empty
+
+	* A customisable seeking abstraction for seeking on multitrack Ogg
+	data. Seeking works easily and reliably on multitrack and multi-codec
+	streams, and can transparently parse Theora, Speex, Vorbis, FLAC,
+	CMML and Ogg Skeleton headers  without requiring linking to those
+	libraries. This allows efficient use on servers and other devices
+	that need to parse and seek within Ogg files, but do not need to do
+	a full media decode.
+
+Full documentation of the liboggz API, customization and installation,
+and mux and demux examples can be read online at:
+
+    http://www.annodex.net/software/liboggz/html/
+
+Tools
+-----
+
+The Oggz source tarball also contains the following command-line tools,
+which are useful for debugging and testing Ogg bitstreams:
+
+        * oggzinfo: Display information about one or more Ogg files and
+        their bitstreams.
+
+	* oggzdump: Hexdump packets of an Ogg file, or revert an Ogg file
+	from such a hexdump.
+
+	* oggzdiff: Hexdump the packets of two Ogg files and output
+	differences.
+
+	* oggzmerge: Merge Ogg files together, interleaving pages in order
+	of presentation time.
+
+	* oggzrip: Extract one or more logical bitstreams from an Ogg file.
+
+        * oggz-validate: Validate the Ogg framing of one or more files.
+
+License
+-------
+
+Oggz is Free Software, available under a BSD style license.
+
+More information is available online at the Oggz homepage:
+
+    http://www.annodex.net/software/liboggz/
+
+enjoy :)
+
+--
+Conrad Parker
+Senior Software Engineer, Continuous Media Web, CSIRO Australia
+http://www.annodex.net/   http://www.ict.csiro.au/cmweb/

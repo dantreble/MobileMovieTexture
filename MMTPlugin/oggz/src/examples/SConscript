@@ -1,0 +1,17 @@
+Import('progenv')
+Import('enable_read')
+Import('enable_write')
+
+sources = []
+
+if enable_read and enable_write:
+	sources += ['identity.c']
+
+if enable_read:
+	sources += ['read-file.c', 'read-io.c', 'seek-stress.c']
+
+if enable_write:
+	sources += ['write-feed.c', 'write-hungry.c']
+
+examples = map (progenv.Program, sources)
+Default(examples)
