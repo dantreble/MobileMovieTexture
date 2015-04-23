@@ -20,19 +20,13 @@ TextureContext::TextureContext(int yStride, int yHeight, int uvStride, int uvHei
 , m_uvStride(uvStride)
 , m_uvHeight(uvHeight)
 {
-    m_planes[0].Allocate(m_yStride,m_yHeight);
-    m_planes[0].Fill(m_yStride,m_yHeight,0);
-    
-    m_planes[1].Allocate(m_uvStride,m_uvHeight);
-    m_planes[1].Fill(m_uvStride,m_uvHeight,127);
-    
+    m_planes[0].Allocate(m_yStride,m_yHeight);    
+    m_planes[1].Allocate(m_uvStride,m_uvHeight);    
     m_planes[2].Allocate(m_uvStride,m_uvHeight);
-    m_planes[2].Fill(m_uvStride,m_uvHeight,127);
 }
 
 TextureContext::~TextureContext()
 {
-    
     for(int i = 0; i < 3 ; ++i)
     {
         m_planes[i].Release();

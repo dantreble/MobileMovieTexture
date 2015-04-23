@@ -67,7 +67,7 @@ Shader "Color Space/YCrCbtoRGB Split Alpha"
 			{
 				fixed4 rgbVec = YCbCrToRGB(SampleYCbCr( i.uvY, i.uvCbCr));
 				
-				rgbVec.w = ((tex2D(_YTex, i.uvAlpha).g - (16.0/255.0)) * (255.0/219.0));
+				rgbVec.w = ((tex2D(_YTex, i.uvAlpha).a - (16.0/255.0)) * (255.0/219.0));
 			
 				return rgbVec;
 			}

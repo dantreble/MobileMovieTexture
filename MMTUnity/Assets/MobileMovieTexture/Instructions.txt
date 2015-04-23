@@ -1,4 +1,4 @@
-Mobile Movie Texture 2.1.1
+Mobile Movie Texture 2.1.2
 
 Getting started
 
@@ -48,6 +48,12 @@ Advanced features
 		This is an alternative form of transparency. It useful for semi transparent videos, where chroma keying would leave you with a blue/green tinge. Check out the example scene "MobileMovieTexture/Scenes/SplitAlphaSample.unity". The alpha channel is converted to luminance and stored next to the color channel. I have included my source sony vegas project for this video here MobileMovieTexture/Source/ExplosionSplitAlpha.7z
 
 Changes
+	Version 2.1.2 15/04/2015
+		•iOS/Android: Fix Unity 5.0 support
+		•iOS: Add metal support
+		•Win: Fix split alpha on DX11
+		•All platforms: fix playing movies of different dimensions sequentially on same MMT component
+
 	Version 2.1.1 27/01/2015
 		•All platforms: Fix a crash
 
@@ -135,5 +141,6 @@ Changes
 		•All Platforms: Removing the color space conversion code saved ~10k
 		•Android: Fixed a bug on when resuming
 		•Windows/OSX: Hand code the YCrCb shader to work around bad cgsl compilation by Unity		
+		
+If you have any questions/problems drop me a mail dan@defiantdev.com. If you have a great experience, the asset store could do with a comment. If you have a terrible one mail me! If you make anything cool with it, I'd love to know.
 
-Trouble shooting

@@ -583,14 +583,16 @@ struct PlaybackState
 				)
 				)
 		{
-			//New texture context
-			if (m_textureContext != NULL)
-			{
-				delete m_textureContext;
-				m_textureContext = NULL;
-			}
-
+            TextureContext *oldTextureContext = m_textureContext;
+            
 			m_textureContext = new TextureContext(m_yStride,m_yHeight,m_uvStride,m_uvHeight);
+            
+            //Delete old one after creating new, to ensure addresses are different
+            //and to get different texture ids
+            if (oldTextureContext != NULL)
+            {
+                delete oldTextureContext;
+            }
 		}
 	}
 
@@ -622,6 +624,7 @@ struct PlaybackState
 	void TryUpload( ) 
 	{
         
+        
 #ifdef PTHREAD
 		if ( ( m_waitUpload && pthread_mutex_lock(&m_upload_mutex) == 0 ) ||
 			(pthread_mutex_trylock(&m_upload_mutex)==0) )
@@ -638,11 +641,10 @@ struct PlaybackState
 #endif
 			if (m_currentDecodedFrameTimeMS > 0 && m_currentDecodedFrameTimeMS != m_currentUploadFrameTimeMS)
 			{
-				if (m_textureContext == NULL)
-				{
-					AllocateTextures();
-				}
-
+                
+                AllocateTextures(); //Do this every frame, in case the movie has changed dimensions
+                
+				
 				if (m_textureContext != NULL && m_thDecCtx != NULL && m_textureContext->UploadTextures(m_thDecCtx))
 				{
 					m_currentUploadFrameTimeMS = m_currentDecodedFrameTimeMS;
@@ -708,7 +710,7 @@ struct PlaybackState
 
 				//state->m_thDecCtx->pp_level = 3;
 
-				state->AllocateTextures();
+				//state->AllocateTextures();
 			}
 		}
 
@@ -1212,6 +1214,12 @@ extern "C"
             UploadReadyPlaybackStates();
         }
         
+#if SUPPORT_OPENGL
+        if( g_DeviceType == kGfxRendererOpenGLES20Mobile || g_DeviceType == kGfxRendererOpenGLES30)
+        {
+            glActiveTexture(GL_TEXTURE0); //hack of the year
+        }
+#endif
     }
     
     THEORAWRAPPER_API void MMTUnitySetGraphicsDevice (void* device, int deviceType, int eventType)
@@ -1230,6 +1238,13 @@ extern "C"
         {
             UploadReadyPlaybackStates();
         }
+        
+#if SUPPORT_OPENGL &&  defined(ANDROID) 
+        if( g_DeviceType == kGfxRendererOpenGLES20Mobile || g_DeviceType == kGfxRendererOpenGLES30)
+        {
+            glActiveTexture(GL_TEXTURE0); 
+        }
+#endif
         
     }
     

@@ -473,9 +473,9 @@ namespace MMT
 
         private void AllocateTexures()
         {
-            m_ChannelTextures[0] = Texture2D.CreateExternalTexture(m_yStride, m_yHeight, TextureFormat.RGBA32, false, false, GetNativeHandle(m_nativeContext, 0));
-			m_ChannelTextures[1] = Texture2D.CreateExternalTexture(m_uvStride, m_uvHeight, TextureFormat.RGBA32, false, false, GetNativeHandle(m_nativeContext, 1));
-			m_ChannelTextures[2] = Texture2D.CreateExternalTexture(m_uvStride, m_uvHeight, TextureFormat.RGBA32, false, false, GetNativeHandle(m_nativeContext, 2));
+            m_ChannelTextures[0] = Texture2D.CreateExternalTexture(m_yStride, m_yHeight, TextureFormat.Alpha8, false, false, GetNativeHandle(m_nativeContext, 0));
+            m_ChannelTextures[1] = Texture2D.CreateExternalTexture(m_uvStride, m_uvHeight, TextureFormat.Alpha8, false, false, GetNativeHandle(m_nativeContext, 1));
+            m_ChannelTextures[2] = Texture2D.CreateExternalTexture(m_uvStride, m_uvHeight, TextureFormat.Alpha8, false, false, GetNativeHandle(m_nativeContext, 2));
             
             if (m_movieMaterials != null)
             {

@@ -1,9 +1,9 @@
 fixed4 SampleYCbCr ( half2 Yuv, half2 CbCruv)
 {
 	#ifdef UNITY_COMPILER_CG
-		fixed4 YCrCb = fixed4(tex2D (_YTex, Yuv).r + 0.001, tex2D (_CrTex, CbCruv).r + 0.001, tex2D (_CbTex, CbCruv).r + 0.001, 1.0);
+		fixed4 YCrCb = fixed4(tex2D (_YTex, Yuv).a + 0.001, tex2D (_CrTex, CbCruv).a + 0.001, tex2D (_CbTex, CbCruv).a + 0.001, 1.0);
 	#else
-		fixed4 YCrCb = fixed4(tex2D (_YTex, Yuv).r, tex2D (_CrTex, CbCruv).r, tex2D (_CbTex, CbCruv).r, 1.0);
+		fixed4 YCrCb = fixed4(tex2D (_YTex, Yuv).a, tex2D (_CrTex, CbCruv).a, tex2D (_CbTex, CbCruv).a, 1.0);
 	#endif
 	
 	return YCrCb;

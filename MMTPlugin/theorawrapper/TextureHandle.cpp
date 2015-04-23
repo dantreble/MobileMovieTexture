@@ -91,9 +91,6 @@ void TextureHandle::Allocate(int stride, int height)
 #ifdef SUPPORT_METAL
         case kGfxRendererMetal:
             m_handle.MTL = (objc_object*)AllocateTextureMTL(stride, height);
-            
-            printf ("Allocated texture %08X", m_handle.MTL);
-            
             break;
 #endif
             

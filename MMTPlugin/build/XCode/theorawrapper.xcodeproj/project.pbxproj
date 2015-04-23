@@ -818,6 +818,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_MODULES_AUTOLINK = NO;
 				DSTROOT = /tmp/theorawrapper.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -825,6 +826,7 @@
 					"$(inherited)",
 					iOS,
 					SUPPORT_OPENGL,
+					SUPPORT_METAL,
 				);
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=arm64]" = "$(inherited)";
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=armv7]" = (
@@ -858,6 +860,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_MODULES_AUTOLINK = NO;
 				DSTROOT = /tmp/theorawrapper.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -865,6 +868,7 @@
 					"$(inherited)",
 					iOS,
 					SUPPORT_OPENGL,
+					SUPPORT_METAL,
 				);
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=arm64]" = "$(inherited)";
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=armv7s]" = (

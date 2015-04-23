@@ -20,7 +20,7 @@ void AllocateTextureD3D11(int stride, int height, ID3D11Texture2D **d3dtex)
 	textureDescriptor.Height = height;
 	textureDescriptor.MipLevels = 1;
 	textureDescriptor.ArraySize = 1;
-	textureDescriptor.Format = DXGI_FORMAT_R8_UNORM;
+	textureDescriptor.Format = DXGI_FORMAT_A8_UNORM;
 	textureDescriptor.SampleDesc.Count = 1;
 	textureDescriptor.SampleDesc.Quality = 0;
 	textureDescriptor.Usage = D3D11_USAGE_DYNAMIC;

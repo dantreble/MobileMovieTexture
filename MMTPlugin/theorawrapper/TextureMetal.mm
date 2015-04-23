@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "TextureMetal.h"
+
 #ifdef SUPPORT_METAL
 
 #import <Metal/Metal.h>
@@ -25,15 +27,28 @@
 
 static id<MTLDevice> s_metalDevice;
 
+extern "C" NSBundle*			UnityGetMetalBundle();
+
+static inline Class MTLTextureDescriptorClass()
+{
+    static Class _MTLTextureDescriptorClass = nil;
+    if(_MTLTextureDescriptorClass == nil)
+        _MTLTextureDescriptorClass = [UnityGetMetalBundle() classNamed:@"MTLTextureDescriptor"];
+    return _MTLTextureDescriptorClass;
+}
+
 + (id<MTLTexture>)aClassMethod:(int)width height:(int)height
 {
-    MTLTextureDescriptor *pTexDesc =[MTLTextureDescriptor
-                                     texture2DDescriptorWithPixelFormat:MTLPixelFormatA8Unorm
-                                     width:width
-                                     height:height
-                                     mipmapped:NO];
+    MTLTextureDescriptor* txDesc = [MTLTextureDescriptorClass() new];
+    txDesc.textureType = MTLTextureType2D;
+    txDesc.width = width;
+    txDesc.height = height;
+    txDesc.depth = 1;
+    txDesc.pixelFormat = MTLPixelFormatA8Unorm;
+    txDesc.arrayLength = 1;
+    txDesc.mipmapLevelCount = 1;
 
-    return [s_metalDevice newTextureWithDescriptor:pTexDesc];
+    return [s_metalDevice newTextureWithDescriptor:txDesc];
 }
 
 + (void)setMetalDevice:(id<MTLDevice>) device

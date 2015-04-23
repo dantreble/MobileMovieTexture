@@ -42,12 +42,6 @@ PluginImporter:
     OSXUniversal:
       enabled: 1
       settings: {}
-    WP8:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-        DontProcess: False
-        PlaceholderPath: 
     Win:
       enabled: 1
       settings:
@@ -56,13 +50,6 @@ PluginImporter:
       enabled: 1
       settings:
         CPU: AnyCPU
-    WindowsStoreApps:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-        DontProcess: False
-        PlaceholderPath: 
-        SDK: AnySDK
     iOS:
       enabled: 0
       settings:

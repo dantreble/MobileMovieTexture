@@ -25,7 +25,7 @@ bool UploadPlaneOpenGL( GLuint handle, int stride, int height, unsigned char *pl
     //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     
-    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, stride, height, GL_LUMINANCE, GL_UNSIGNED_BYTE, planeData);
+    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, stride, height, GL_ALPHA, GL_UNSIGNED_BYTE, planeData);
     //glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE, x, y, 0, GL_LUMINANCE, GL_UNSIGNED_BYTE, data );
 
     return true;
@@ -44,7 +44,7 @@ GLuint AllocateTextureOpenGL( int x, int y )
     //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     
     //glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, x, y, GL_LUMINANCE, GL_UNSIGNED_BYTE, data);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE, x, y, 0, GL_LUMINANCE, GL_UNSIGNED_BYTE, 0 );
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, x, y, 0, GL_ALPHA, GL_UNSIGNED_BYTE, 0 );
     
     return handle;
 }

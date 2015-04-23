@@ -14,7 +14,7 @@ IDirect3DDevice9 *g_DeviceD3D9 = NULL;
 
 void AllocateTextureD3D(int stride, int height, IDirect3DTexture9** d3dtex)
 {
-    g_DeviceD3D9->CreateTexture(stride,height,1,D3DUSAGE_DYNAMIC,D3DFMT_L8,D3DPOOL_DEFAULT,d3dtex,NULL);
+    g_DeviceD3D9->CreateTexture(stride,height,1,D3DUSAGE_DYNAMIC,D3DFMT_A8,D3DPOOL_DEFAULT,d3dtex,NULL);
 }
 
 void ReleaseTextureD3D( IDirect3DTexture9 **handle )
