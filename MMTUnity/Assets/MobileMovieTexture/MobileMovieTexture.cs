@@ -473,10 +473,17 @@ namespace MMT
 
         private void AllocateTexures()
         {
-            m_ChannelTextures[0] = Texture2D.CreateExternalTexture(m_yStride, m_yHeight, TextureFormat.Alpha8, false, false, GetNativeHandle(m_nativeContext, 0));
+			//CreateExternalTexture is broken in OSX on 5.2. 
+			//It gets fixed in 5.2.1p3
+			//(725329), (730178) - OSX: Fixed external texture crash with OpenGL2 device.
+			#if !((UNITY_STANDALONE_OSX || UNITY_EDITOR_OSX) && (UNITY_5_2_1 || UNITY_5_2_0))
+            m_ChannelTextures[0] = Texture2D.CreateExternalTexture(m_yStride, m_yHeight, TextureFormat.Alpha8, false, false, GetNativeHandle (m_nativeContext, 0));
             m_ChannelTextures[1] = Texture2D.CreateExternalTexture(m_uvStride, m_uvHeight, TextureFormat.Alpha8, false, false, GetNativeHandle(m_nativeContext, 1));
             m_ChannelTextures[2] = Texture2D.CreateExternalTexture(m_uvStride, m_uvHeight, TextureFormat.Alpha8, false, false, GetNativeHandle(m_nativeContext, 2));
-            
+            #elif UNITY_EDITOR_OSX
+            m_ChannelTextures[0] = UnityEditor.AssetDatabase.LoadAssetAtPath<Texture2D>(UnityEditor.AssetDatabase.GUIDToAssetPath("cd05051ec291942bf8541b70ffbb3094"));
+            #endif
+
             if (m_movieMaterials != null)
             {
                 for (int i = 0; i < m_movieMaterials.Length; ++i)
@@ -570,7 +577,9 @@ namespace MMT
             {
                 if (m_ChannelTextures[i] != null)
                 {
+#if !((UNITY_STANDALONE_OSX || UNITY_EDITOR_OSX) && (UNITY_5_2_1 || UNITY_5_2_0))
                     Destroy(m_ChannelTextures[i]);
+#endif
                     m_ChannelTextures[i] = null;
                 }
             }

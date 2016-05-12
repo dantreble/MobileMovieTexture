@@ -28,8 +28,6 @@
     #endif
 #endif
 
-#include "GfxDevice.h"
-
 #include "TextureHandle.h"
 
 struct th_dec_ctx;

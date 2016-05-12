@@ -8,6 +8,8 @@
 
 #include <stdio.h>
 
+#include "GfxDevice.h"
+
 #include "TextureHandle.h"
 
 #ifdef SUPPORT_OPENGL
@@ -22,7 +24,7 @@
 #include "TextureD3D11.h"
 #endif
 
-#ifdef SUPPORT_METAL
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
 #include "TextureMetal.h"
 #endif
 
@@ -33,28 +35,28 @@ TextureHandle::TextureHandle()
     switch( g_DeviceType )
     {
 #ifdef SUPPORT_OPENGL
-        case kGfxRendererOpenGL:			// OpenGL
-        case kGfxRendererOpenGLES20Mobile:	// OpenGL ES 2.0
-        case kGfxRendererOpenGLES30:		// OpenGL ES 3.0
+        case kUnityGfxRendererOpenGL:			// OpenGL
+        case kUnityGfxRendererOpenGLES20:       // OpenGL ES 2.0
+        case kUnityGfxRendererOpenGLES30:		// OpenGL ES 3.0
             m_handle.OPENGL = GL_INVALID_VALUE;
             break;
 #endif
             
 #ifdef SUPPORT_D3D9
-        case kGfxRendererD3D9:				// Direct3D 9
+        case kUnityGfxRendererD3D9:				// Direct3D 9
             m_handle.D3D9 = NULL;
             break;
 #endif
 
 #ifdef SUPPORT_D3D9
-		case kGfxRendererD3D11:				// Direct3D 11
+		case kUnityGfxRendererD3D11:				// Direct3D 11
 			m_handle.D3D11 = NULL;
 			break;
 #endif
 
             
-#ifdef SUPPORT_METAL
-        case kGfxRendererMetal:
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
+        case kUnityGfxRendererMetal:
             m_handle.MTL = NULL;
             break;
 #endif
@@ -69,27 +71,27 @@ void TextureHandle::Allocate(int stride, int height)
     switch( g_DeviceType )
     {
 #ifdef SUPPORT_OPENGL
-        case kGfxRendererOpenGL:			// OpenGL
-        case kGfxRendererOpenGLES20Mobile:	// OpenGL ES 2.0
-        case kGfxRendererOpenGLES30:		// OpenGL ES 3.0
+        case kUnityGfxRendererOpenGL:			// OpenGL
+        case kUnityGfxRendererOpenGLES20:	// OpenGL ES 2.0
+        case kUnityGfxRendererOpenGLES30:		// OpenGL ES 3.0
             m_handle.OPENGL = AllocateTextureOpenGL( stride, height);
             break;
 #endif
             
 #ifdef SUPPORT_D3D9
-        case kGfxRendererD3D9:				// Direct3D 9
+        case kUnityGfxRendererD3D9:				// Direct3D 9
             AllocateTextureD3D(stride,height, &m_handle.D3D9);
             break;
 #endif
 
 #ifdef SUPPORT_D3D11
-		case kGfxRendererD3D11:				// Direct3D 11
+		case kUnityGfxRendererD3D11:				// Direct3D 11
 			AllocateTextureD3D11(stride,height, &m_handle.D3D11 );
 			break;
 #endif
             
-#ifdef SUPPORT_METAL
-        case kGfxRendererMetal:
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
+        case kUnityGfxRendererMetal:
             m_handle.MTL = (objc_object*)AllocateTextureMTL(stride, height);
             break;
 #endif
@@ -104,27 +106,27 @@ void TextureHandle::Fill(int stride, int height, unsigned char byte)
     switch( g_DeviceType )
     {
 #ifdef SUPPORT_OPENGL
-        case kGfxRendererOpenGL:			// OpenGL
-        case kGfxRendererOpenGLES20Mobile:	// OpenGL ES 2.0
-        case kGfxRendererOpenGLES30:		// OpenGL ES 3.0
+        case kUnityGfxRendererOpenGL:			// OpenGL
+        case kUnityGfxRendererOpenGLES20:	// OpenGL ES 2.0
+        case kUnityGfxRendererOpenGLES30:		// OpenGL ES 3.0
             FillByteOpenGL(m_handle.OPENGL, stride, height, byte);
             break;
 #endif
             
 #ifdef SUPPORT_D3D9
-        case kGfxRendererD3D9:				// Direct3D 9
+        case kUnityGfxRendererD3D9:				// Direct3D 9
             FillByteD3D( m_handle.D3D9 , byte);
             break;
 #endif
 
 #ifdef SUPPORT_D3D11
-		case kGfxRendererD3D11:				// Direct3D 11
+		case kUnityGfxRendererD3D11:				// Direct3D 11
 			FillByteD3D11(m_handle.D3D11,byte );
 			break;
 #endif
             
-#ifdef SUPPORT_METAL
-        case kGfxRendererMetal:
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
+        case kUnityGfxRendererMetal:
             FillByteMTL(m_handle.MTL, stride, height, byte);
             break;
 #endif
@@ -140,27 +142,27 @@ void TextureHandle::Release()
     switch( g_DeviceType )
     {
 #ifdef SUPPORT_OPENGL
-        case kGfxRendererOpenGL:			// OpenGL
-        case kGfxRendererOpenGLES20Mobile:	// OpenGL ES 2.0
-        case kGfxRendererOpenGLES30:		// OpenGL ES 3.0
+        case kUnityGfxRendererOpenGL:			// OpenGL
+        case kUnityGfxRendererOpenGLES20:	// OpenGL ES 2.0
+        case kUnityGfxRendererOpenGLES30:		// OpenGL ES 3.0
             m_handle.OPENGL = ReleaseTextureOpenGL( m_handle.OPENGL );
             break;
 #endif
             
 #ifdef SUPPORT_D3D9
-        case kGfxRendererD3D9:				// Direct3D 9
+        case kUnityGfxRendererD3D9:				// Direct3D 9
             ReleaseTextureD3D(&m_handle.D3D9);
             break;
 #endif
 
 #ifdef SUPPORT_D3D11
-		case kGfxRendererD3D11:				// Direct3D 11
+		case kUnityGfxRendererD3D11:				// Direct3D 11
 			ReleaseTextureD3D11(&m_handle.D3D11 );
 			break;
 #endif
             
-#ifdef SUPPORT_METAL
-        case kGfxRendererMetal:
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
+        case kUnityGfxRendererMetal:
             ReleaseTextureMTL(m_handle.MTL);
             break;
 #endif
@@ -178,27 +180,27 @@ bool TextureHandle::UploadPlane( int stride, int height, th_ycbcr_buffer yCrCbBu
     switch( g_DeviceType )
     {
 #ifdef SUPPORT_OPENGL
-        case kGfxRendererOpenGL:			// OpenGL
-        case kGfxRendererOpenGLES20Mobile:	// OpenGL ES 2.0
-        case kGfxRendererOpenGLES30:		// OpenGL ES 3.0
+        case kUnityGfxRendererOpenGL:			// OpenGL
+        case kUnityGfxRendererOpenGLES20:	// OpenGL ES 2.0
+        case kUnityGfxRendererOpenGLES30:		// OpenGL ES 3.0
             return UploadPlaneOpenGL( m_handle.OPENGL, stride, height, planeData );
             break;
 #endif
             
 #ifdef SUPPORT_D3D9
-        case kGfxRendererD3D9:				// Direct3D 9
+        case kUnityGfxRendererD3D9:				// Direct3D 9
             return UploadPlaneD3D( m_handle.D3D9, stride, height, planeData );
             break;
 #endif
 
 #ifdef SUPPORT_D3D11
-		case kGfxRendererD3D11:				// Direct3D 11
+		case kUnityGfxRendererD3D11:				// Direct3D 11
 			 return UploadPlaneD3D11( m_handle.D3D11, stride, height, planeData );
 			break;
 #endif
             
-#ifdef SUPPORT_METAL
-        case kGfxRendererMetal:
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
+        case kUnityGfxRendererMetal:
             return UploadPlaneMTL((void*)m_handle.MTL, stride, height, planeData );
             break;
 #endif
@@ -214,13 +216,13 @@ void *TextureHandle::GetNativeHandle()
     switch(g_DeviceType)
     {
 #ifdef SUPPORT_D3D9
-        case kGfxRendererD3D9:
+        case kUnityGfxRendererD3D9:
             return (void *)m_handle.D3D9;
             break;
 #endif
 
 #ifdef SUPPORT_D3D11
-		case kGfxRendererD3D11:				// Direct3D 11
+		case kUnityGfxRendererD3D11:				// Direct3D 11
 			{
 				ID3D11ShaderResourceView *resourceView;
 
@@ -234,15 +236,15 @@ void *TextureHandle::GetNativeHandle()
 #endif
             
 #ifdef SUPPORT_OPENGL
-        case kGfxRendererOpenGL:			// OpenGL
-        case kGfxRendererOpenGLES20Mobile:	// OpenGL ES 2.0
-        case kGfxRendererOpenGLES30:		// OpenGL ES 3.0
+        case kUnityGfxRendererOpenGL:			// OpenGL
+        case kUnityGfxRendererOpenGLES20:	// OpenGL ES 2.0
+        case kUnityGfxRendererOpenGLES30:		// OpenGL ES 3.0
             return (void*)m_handle.OPENGL;
             break;
 #endif
             
-#ifdef SUPPORT_METAL
-        case kGfxRendererMetal:
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
+        case kUnityGfxRendererMetal:
             return (void*)m_handle.MTL;
             break;
 #endif

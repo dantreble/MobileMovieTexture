@@ -10,7 +10,27 @@
 
 #ifdef SUPPORT_D3D11
 
+#include "GfxDevice.h"
+
+#include "Unity\IUnityGraphicsD3D11.h"
+
 ID3D11Device *g_DeviceD3D11 = NULL;
+
+void DoEventGraphicsDeviceD3D11(UnityGfxDeviceEventType eventType)
+{
+    if (eventType == kUnityGfxDeviceEventInitialize)
+    {
+        IUnityGraphicsD3D11* d3d11 = s_UnityInterfaces->Get<IUnityGraphicsD3D11>();
+        g_DeviceD3D11 = d3d11->GetDevice();
+        
+        //EnsureD3D11ResourcesAreCreated();
+    }
+    else if (eventType == kUnityGfxDeviceEventShutdown)
+    {
+        //ReleaseD3D11Resources();
+    }
+}
+
 
 void AllocateTextureD3D11(int stride, int height, ID3D11Texture2D **d3dtex)
 {

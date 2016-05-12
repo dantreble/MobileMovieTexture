@@ -8,4 +8,10 @@
 
 #include "GfxDevice.h"
 
-GfxDeviceRenderer g_DeviceType = kGfxRendererNull;
+#include "Unity/IUnityInterface.h"
+
+#include <cstddef>
+
+IUnityInterfaces* s_UnityInterfaces = NULL;
+IUnityGraphics* s_Graphics = NULL;
+UnityGfxRenderer g_DeviceType = kUnityGfxRendererNull;

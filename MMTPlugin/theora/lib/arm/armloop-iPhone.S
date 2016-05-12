@@ -1,4 +1,6 @@
-#ifndef __arm64__
+#import "TargetConditionals.h"
+
+#if !defined(__arm64__) && !defined(TARGET_IPHONE_SIMULATOR)
 
 @********************************************************************
 @*                                                                  *
