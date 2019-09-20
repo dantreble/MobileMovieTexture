@@ -10,10 +10,9 @@
 
 #import "TextureMetal.h"
 
-#ifdef SUPPORT_METAL
+#if defined(SUPPORT_METAL)
 
 #import <Metal/Metal.h>
-
 
 
 @interface TextureMetal : NSObject

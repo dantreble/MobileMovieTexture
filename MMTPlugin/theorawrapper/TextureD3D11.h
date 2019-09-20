@@ -12,9 +12,11 @@
 #ifdef SUPPORT_D3D11
 #include <d3d11.h>
 
+#include "Unity/IUnityGraphics.h"
 
 extern ID3D11Device *g_DeviceD3D11;
 
+void DoEventGraphicsDeviceD3D11(UnityGfxDeviceEventType eventType);
 void AllocateTextureD3D11(int stride, int height, ID3D11Texture2D** d3dtex);
 void ReleaseTextureD3D11( ID3D11Texture2D **handle );
 bool UploadPlaneD3D11( ID3D11Texture2D* d3dtex, int stride, int height, unsigned char *planeData);

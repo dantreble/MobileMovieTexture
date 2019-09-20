@@ -30,6 +30,7 @@
 #endif
 
 struct PlaybackState;
+struct IUnityInterfaces;
 
 
 extern "C"
@@ -56,12 +57,12 @@ extern "C"
 	THEORAWRAPPER_API double Seek (PlaybackState *state, double time, bool waitKeyFrame);
 	THEORAWRAPPER_API double GetDuration(PlaybackState *state);
     THEORAWRAPPER_API void UploadReadyPlaybackStates ();
-    THEORAWRAPPER_API void SetGraphicsDevice (void* device, int deviceType, int eventType);
+    //THEORAWRAPPER_API void SetGraphicsDevice (void* device, int deviceType, int eventType);
 #if defined (iOS)
 	THEORAWRAPPER_API void MMTUnityRenderEvent (int eventID);
 	THEORAWRAPPER_API void MMTUnitySetGraphicsDevice (void* device, int deviceType, int eventType);
 #else
-    THEORAWRAPPER_API void UnityRenderEvent (int eventID);
+    //THEORAWRAPPER_API void UnityRenderEvent (int eventID);
     THEORAWRAPPER_API void UnitySetGraphicsDevice (void* device, int deviceType, int eventType);
 #endif
 	THEORAWRAPPER_API void *GetNativeHandle( PlaybackState *state , int plane);

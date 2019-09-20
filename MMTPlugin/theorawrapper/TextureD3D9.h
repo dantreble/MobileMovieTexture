@@ -12,9 +12,11 @@
 #ifdef SUPPORT_D3D9
 #include <d3d9.h>
 
+#include "Unity/IUnityGraphics.h"
 
 extern IDirect3DDevice9 *g_DeviceD3D9;
 
+void DoEventGraphicsDeviceD3D9(UnityGfxDeviceEventType eventType);
 void AllocateTextureD3D(int stride, int height, IDirect3DTexture9** d3dtex);
 void ReleaseTextureD3D( IDirect3DTexture9 **handle );
 bool UploadPlaneD3D( IDirect3DTexture9* d3dtex, int stride, int height, unsigned char *planeData);

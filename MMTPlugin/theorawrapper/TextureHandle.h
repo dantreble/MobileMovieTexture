@@ -37,11 +37,10 @@
 #endif
 #endif
 
-#if SUPPORT_METAL
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
 typedef struct objc_object*		MTLTextureRef;
 #endif
 
-#include "GfxDevice.h"
 
 #include "theora/codec.h"
 
@@ -63,7 +62,7 @@ struct TextureHandle
         GLuint OPENGL;
 #endif
         
-#if SUPPORT_METAL
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
         MTLTextureRef MTL;
 #endif
         

@@ -52,6 +52,10 @@
 		378C8B51149007BE00927CFE /* internal.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D5148CEEF700C98160 /* internal.c */; };
 		378C8B52149007BE00927CFE /* quant.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D7148CEEF700C98160 /* quant.c */; };
 		378C8B53149007BE00927CFE /* state.c in Sources */ = {isa = PBXBuildFile; fileRef = 37EC91D9148CEEF700C98160 /* state.c */; };
+		37AC3C4C1BA596F000F44914 /* Unity in Resources */ = {isa = PBXBuildFile; fileRef = 37AC3C4B1BA596F000F44914 /* Unity */; };
+		37AC3C4F1BA6EA0A00F44914 /* TextureD3D11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37AC3C4D1BA6EA0A00F44914 /* TextureD3D11.cpp */; };
+		37AC3C501BA6EA0A00F44914 /* TextureD3D11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37AC3C4D1BA6EA0A00F44914 /* TextureD3D11.cpp */; };
+		37AC3C511BA6EA0A00F44914 /* TextureD3D11.h in Headers */ = {isa = PBXBuildFile; fileRef = 37AC3C4E1BA6EA0A00F44914 /* TextureD3D11.h */; };
 		37B498341A53B6B8007DA3C1 /* libtheorawrapper.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37EC919F148CEC8700C98160 /* libtheorawrapper.a */; };
 		37C379F6148F3D660088368D /* armfrag-iPhone.S in Sources */ = {isa = PBXBuildFile; fileRef = 37C379F2148F3D660088368D /* armfrag-iPhone.S */; };
 		37C379F7148F3D660088368D /* armidct-iPhone.S in Sources */ = {isa = PBXBuildFile; fileRef = 37C379F3148F3D660088368D /* armidct-iPhone.S */; };
@@ -178,6 +182,9 @@
 		378C8B35149006A800927CFE /* theorawrapperosx-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "theorawrapperosx-Info.plist"; sourceTree = "<group>"; };
 		378C8B37149006A800927CFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		378C8B39149006A800927CFE /* theorawrapperosx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "theorawrapperosx-Prefix.pch"; sourceTree = "<group>"; };
+		37AC3C4B1BA596F000F44914 /* Unity */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Unity; path = ../../theorawrapper/Unity; sourceTree = "<group>"; };
+		37AC3C4D1BA6EA0A00F44914 /* TextureD3D11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextureD3D11.cpp; path = ../../theorawrapper/TextureD3D11.cpp; sourceTree = "<group>"; };
+		37AC3C4E1BA6EA0A00F44914 /* TextureD3D11.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureD3D11.h; path = ../../theorawrapper/TextureD3D11.h; sourceTree = "<group>"; };
 		37C379F2148F3D660088368D /* armfrag-iPhone.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "armfrag-iPhone.S"; path = "../../theora/lib/arm/armfrag-iPhone.S"; sourceTree = "<group>"; };
 		37C379F3148F3D660088368D /* armidct-iPhone.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "armidct-iPhone.S"; path = "../../theora/lib/arm/armidct-iPhone.S"; sourceTree = "<group>"; };
 		37C379F4148F3D660088368D /* armloop-iPhone.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "armloop-iPhone.S"; path = "../../theora/lib/arm/armloop-iPhone.S"; sourceTree = "<group>"; };
@@ -296,6 +303,9 @@
 		37EC9194148CEC8600C98160 = {
 			isa = PBXGroup;
 			children = (
+				37AC3C4D1BA6EA0A00F44914 /* TextureD3D11.cpp */,
+				37AC3C4E1BA6EA0A00F44914 /* TextureD3D11.h */,
+				37AC3C4B1BA596F000F44914 /* Unity */,
 				37500F881A5ABEB200C805EA /* TextureMetal.h */,
 				37500F861A59559A00C805EA /* TextureMetal.mm */,
 				373DAF041A5034E1003723D9 /* GfxDevice.cpp */,
@@ -508,6 +518,7 @@
 				37F3021418A4F64C00BACE4C /* oggz_compat.h in Headers */,
 				37EC91E4148CEEF700C98160 /* huffdec.h in Headers */,
 				373DAF121A5034E1003723D9 /* MathHelpers.h in Headers */,
+				37AC3C511BA6EA0A00F44914 /* TextureD3D11.h in Headers */,
 				37F3021018A4F64C00BACE4C /* debug.h in Headers */,
 				373DAF1B1A5034E1003723D9 /* TextureHandle.h in Headers */,
 				37F3021618A4F64C00BACE4C /* oggz_macros.h in Headers */,
@@ -593,6 +604,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37AC3C4C1BA596F000F44914 /* Unity in Resources */,
 				378C8B38149006A800927CFE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,6 +651,7 @@
 				378C8B4F149007BE00927CFE /* idct.c in Sources */,
 				37F301F018A4F61E00BACE4C /* oggz_auto.c in Sources */,
 				378C8B50149007BE00927CFE /* info.c in Sources */,
+				37AC3C501BA6EA0A00F44914 /* TextureD3D11.cpp in Sources */,
 				378C8B51149007BE00927CFE /* internal.c in Sources */,
 				378C8B52149007BE00927CFE /* quant.c in Sources */,
 				37F3020018A4F61E00BACE4C /* oggz_vector.c in Sources */,
@@ -687,6 +700,7 @@
 				37F301F118A4F61E00BACE4C /* oggz_comments.c in Sources */,
 				37C379F6148F3D660088368D /* armfrag-iPhone.S in Sources */,
 				37F301EB18A4F61E00BACE4C /* dirac.c in Sources */,
+				37AC3C4F1BA6EA0A00F44914 /* TextureD3D11.cpp in Sources */,
 				37F301FD18A4F61E00BACE4C /* oggz_table.c in Sources */,
 				37F3020318A4F61E00BACE4C /* oggz.c in Sources */,
 				37C379F7148F3D660088368D /* armidct-iPhone.S in Sources */,
@@ -871,12 +885,12 @@
 					SUPPORT_METAL,
 				);
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=arm64]" = "$(inherited)";
-				"GCC_PREPROCESSOR_DEFINITIONS[arch=armv7s]" = (
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=armv7]" = (
 					"$(inherited)",
 					OC_ARM_ASM,
 					OC_ARM_ASM_NEON,
 				);
-				"GCC_PREPROCESSOR_DEFINITIONS[sdk=iphoneos*][arch=armv7]" = (
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=armv7s]" = (
 					"$(inherited)",
 					OC_ARM_ASM,
 					OC_ARM_ASM_NEON,

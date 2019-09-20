@@ -153,6 +153,11 @@
     <ClInclude Include="..\..\TextureHandle.h" />
     <ClInclude Include="..\..\TextureOpenGL.h" />
     <ClInclude Include="..\..\theorawrapper.h" />
+    <ClInclude Include="..\..\Unity\IUnityGraphics.h" />
+    <ClInclude Include="..\..\Unity\IUnityGraphicsD3D11.h" />
+    <ClInclude Include="..\..\Unity\IUnityGraphicsD3D12.h" />
+    <ClInclude Include="..\..\Unity\IUnityGraphicsD3D9.h" />
+    <ClInclude Include="..\..\Unity\IUnityInterface.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\oggz\win32\VS2010\liboggz\liboggz_static.vcxproj">

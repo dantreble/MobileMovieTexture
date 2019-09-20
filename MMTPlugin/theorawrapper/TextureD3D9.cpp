@@ -10,7 +10,35 @@
 
 #ifdef SUPPORT_D3D9
 
+#include "GfxDevice.h"
+
+#include "Unity\IUnityGraphicsD3D9.h"
+
 IDirect3DDevice9 *g_DeviceD3D9 = NULL;
+
+void DoEventGraphicsDeviceD3D9(UnityGfxDeviceEventType eventType)
+{
+    // Create or release a small dynamic vertex buffer depending on the event type.
+    switch (eventType)
+    {
+        case kUnityGfxDeviceEventInitialize:
+        {
+            IUnityGraphicsD3D9* d3d9 = s_UnityInterfaces->Get<IUnityGraphicsD3D9>();
+            g_DeviceD3D9 = d3d9->GetDevice();
+        }
+            break;
+        case kUnityGfxDeviceEventAfterReset:
+            // After device is initialized or was just reset, create the VB.
+            //if (!g_D3D9DynamicVB)
+            //    g_D3D9Device->CreateVertexBuffer (1024, D3DUSAGE_WRITEONLY | D3DUSAGE_DYNAMIC, 0, D3DPOOL_DEFAULT, &g_D3D9DynamicVB, NULL);
+            break;
+        case kUnityGfxDeviceEventBeforeReset:
+        case kUnityGfxDeviceEventShutdown:
+            // Before device is reset or being shut down, release the VB.
+            //SAFE_RELEASE(g_D3D9DynamicVB);
+            break;
+    }
+}
 
 void AllocateTextureD3D(int stride, int height, IDirect3DTexture9** d3dtex)
 {
@@ -32,6 +60,8 @@ bool UploadPlaneD3D( IDirect3DTexture9* d3dtex, int stride, int height, unsigned
     {
         return false;
     }
+    
+    
     
     g_DeviceD3D9->SetRenderState (D3DRS_CULLMODE, D3DCULL_NONE);
     g_DeviceD3D9->SetRenderState (D3DRS_LIGHTING, FALSE);

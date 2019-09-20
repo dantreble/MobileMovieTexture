@@ -69,17 +69,26 @@ static void Log(const char* fmt, ...)
 #endif
 #endif
 
-#ifdef SUPPORT_METAL
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
 #include "TextureMetal.h"
 #endif
 
 #if SUPPORT_D3D9
+#include <d3d9.h>
+#include "Unity/IUnityGraphicsD3D9.h"
 #include "TextureD3D9.h"
 #endif
 
 #if SUPPORT_D3D11
+#include <d3d11.h>
+#include "Unity/IUnityGraphicsD3D11.h"
 #include "TextureD3D11.h"
 #endif
+
+//#if SUPPORT_D3D12
+//#include <d3d12.h>
+//#include "Unity/IUnityGraphicsD3D12.h"
+//#endif
 
 
 struct PlaybackState;
@@ -574,7 +583,7 @@ struct PlaybackState
 	void AllocateTextures()
 	{
 		if ( m_headerInitialized &&
-             g_DeviceType != kGfxRendererNull &&
+             g_DeviceType != kUnityGfxRendererNull &&
 				(m_textureContext == NULL || 
 				m_textureContext->m_yStride != m_yStride ||
 				m_textureContext->m_yHeight != m_yHeight ||
@@ -1118,14 +1127,15 @@ extern "C"
         LeaveCriticalSection(&g_playBackStatesMutex);
 #endif
     }
+    
 
-		static void HandleGraphicsEvent (GfxDeviceRenderer deviceType, GfxDeviceEventType eventType)
+    static void HandleGraphicsEvent (UnityGfxRenderer deviceType, UnityGfxDeviceEventType eventType)
 	{
 		// Create or release a small dynamic vertex buffer depending on the event type.
 		switch (eventType) 
 		{
-		case kGfxDeviceEventInitialize:
-		case kGfxDeviceEventAfterReset:
+		case kUnityGfxDeviceEventInitialize:
+		case kUnityGfxDeviceEventAfterReset:
 			// After device is initialized or was just reset, create the VB.
 			if (g_playBackStates != NULL)
 			{
@@ -1140,8 +1150,8 @@ extern "C"
 			
 
 			break;
-		case kGfxDeviceEventBeforeReset:
-		case kGfxDeviceEventShutdown:
+		case kUnityGfxDeviceEventBeforeReset:
+		case kUnityGfxDeviceEventShutdown:
 			// Before device is reset or being shut down, release the VB.
 			
 			if (g_playBackStates != NULL)
@@ -1158,28 +1168,95 @@ extern "C"
 		}
 	}
     
+    static void UNITY_INTERFACE_API OnGraphicsDeviceEvent(UnityGfxDeviceEventType eventType)
+    {
+        UnityGfxRenderer currentDeviceType = g_DeviceType;
+        
+        switch (eventType)
+        {
+            case kUnityGfxDeviceEventInitialize:
+            {
+                Log("OnGraphicsDeviceEvent(Initialize).\n");
+                g_DeviceType = s_Graphics->GetRenderer();
+                currentDeviceType = g_DeviceType;
+                break;
+            }
+                
+            case kUnityGfxDeviceEventShutdown:
+            {
+                Log("OnGraphicsDeviceEvent(Shutdown).\n");
+                g_DeviceType = kUnityGfxRendererNull;
+                break;
+            }
+                
+            case kUnityGfxDeviceEventBeforeReset:
+            {
+                Log("OnGraphicsDeviceEvent(BeforeReset).\n");
+                break;
+            }
+                
+            case kUnityGfxDeviceEventAfterReset:
+            {
+                Log("OnGraphicsDeviceEvent(AfterReset).\n");
+                break;
+            }
+        };
+        
+#if SUPPORT_D3D9
+        if (currentDeviceType == kUnityGfxRendererD3D9)
+            DoEventGraphicsDeviceD3D9(eventType);
+#endif
+        
+#if SUPPORT_D3D11
+        if (currentDeviceType == kUnityGfxRendererD3D11)
+            DoEventGraphicsDeviceD3D11(eventType);
+#endif
+        
+//#if SUPPORT_D3D12
+//        if (currentDeviceType == kUnityGfxRendererD3D12)
+//            DoEventGraphicsDeviceD3D12(eventType);
+//#endif
+        
+//#if SUPPORT_OPENGLES
+//        if (currentDeviceType == kUnityGfxRendererOpenGLES20 ||
+//            currentDeviceType == kUnityGfxRendererOpenGLES30)
+//            DoEventGraphicsDeviceGLES(eventType);
+//#endif
+        
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
+        if (currentDeviceType == kUnityGfxRendererMetal)
+        {
+            Log ("Set Metal graphics device\n");
+            //SetMetalDevice(device);
+        }
+#endif
+        
+        HandleGraphicsEvent (currentDeviceType, eventType);
+        
+    }
+    
     THEORAWRAPPER_API void SetGraphicsDevice (void* device, int deviceType, int eventType)
     {
     	// Set device type to kGfxRendererNull, i.e. "not recognized by our plugin"
-		g_DeviceType = (GfxDeviceRenderer)deviceType;
+		g_DeviceType = (UnityGfxRenderer)deviceType;
         
 		
 #ifdef SUPPORT_D3D9
 		// D3D9 device, remember device pointer and device type.
 		// The pointer we get is IDirect3DDevice9.
-		if (deviceType == kGfxRendererD3D9)
+		if (deviceType == kUnityGfxRendererD3D9)
 		{
 			//DebugLog ("Set D3D9 graphics device\n");
 			//g_DeviceType = deviceType;
 			g_DeviceD3D9 = (IDirect3DDevice9*)device;
-			HandleGraphicsEvent (g_DeviceType,(GfxDeviceEventType)eventType);
+			HandleGraphicsEvent (g_DeviceType,(UnityGfxDeviceEventType)eventType);
 		}
 #endif
         
 #if SUPPORT_D3D11
 		// D3D11 device, remember device pointer and device type.
 		// The pointer we get is ID3D11Device.
-		if (deviceType == kGfxRendererD3D11)
+		if (deviceType == kUnityGfxRendererD3D11)
 		{
 			g_DeviceD3D11 = (ID3D11Device*)device;
 			//SetGraphicsDeviceD3D11 ((ID3D11Device*)device, (GfxDeviceEventType)eventType);
@@ -1190,14 +1267,14 @@ extern "C"
 		// If we've got an OpenGL device, remember device type. There's no OpenGL
 		// "device pointer" to remember since OpenGL always operates on a currently set
 		// global context.
-		/*if (deviceType == kGfxRendererOpenGL || deviceType == kGfxRendererOpenGLES20Mobile || deviceType == kGfxRendererOpenGLES30)
+		/*if (deviceType == kUnityGfxRendererOpenGL || deviceType == kUnityGfxRendererOpenGLES20 || deviceType == kUnityGfxRendererOpenGLES30)
 		{
 			Log ("Set OpenGL graphics device\n");
 		}*/
 #endif
         
-#ifdef SUPPORT_METAL
-        if (deviceType == kGfxRendererMetal)
+#if defined(SUPPORT_METAL) && !defined(TARGET_IPHONE_SIMULATOR)
+        if (deviceType == kUnityGfxRendererMetal)
         {
             Log ("Set Metal graphics device\n");
             SetMetalDevice(device);
@@ -1215,7 +1292,7 @@ extern "C"
         }
         
 #if SUPPORT_OPENGL
-        if( g_DeviceType == kGfxRendererOpenGLES20Mobile || g_DeviceType == kGfxRendererOpenGLES30)
+        if( g_DeviceType == kUnityGfxRendererOpenGLES20 || g_DeviceType == kUnityGfxRendererOpenGLES30)
         {
             glActiveTexture(GL_TEXTURE0); //hack of the year
         }
@@ -1228,9 +1305,23 @@ extern "C"
         
         SetGraphicsDevice (device,deviceType,eventType);
     }
-	
-
+    
 #else
+    
+    void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API UnityPluginLoad(IUnityInterfaces* unityInterfaces)
+    {
+        s_UnityInterfaces = unityInterfaces;
+        s_Graphics = s_UnityInterfaces->Get<IUnityGraphics>();
+        s_Graphics->RegisterDeviceEventCallback(OnGraphicsDeviceEvent);
+        
+        // Run OnGraphicsDeviceEvent(initialize) manually on plugin load
+        OnGraphicsDeviceEvent(kUnityGfxDeviceEventInitialize);
+    }
+    
+    void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API UnityPluginUnload()
+    {
+        s_Graphics->UnregisterDeviceEventCallback(OnGraphicsDeviceEvent);
+    }
     
     THEORAWRAPPER_API void UnityRenderEvent (int eventID)
     {
@@ -1240,7 +1331,7 @@ extern "C"
         }
         
 #if SUPPORT_OPENGL &&  defined(ANDROID) 
-        if( g_DeviceType == kGfxRendererOpenGLES20Mobile || g_DeviceType == kGfxRendererOpenGLES30)
+        if( g_DeviceType == kUnityGfxRendererOpenGLES20 || g_DeviceType == kUnityGfxRendererOpenGLES30)
         {
             glActiveTexture(GL_TEXTURE0); 
         }
